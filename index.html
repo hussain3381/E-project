@@ -18,32 +18,32 @@
 
             <nav class="desktop-nav d-none d-lg-flex">
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="#" style='color:black;'><span>--</span> Home 1</a>
                         <a href="#"><span>--</span> Home 2</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">About</a>
+                    <a href="#" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="#"><span>--</span> Our Story</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Shop</a>
+                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="#"><span>--</span> Products</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Blog</a>
+                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="#"><span>--</span> Latest News</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="#" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="#"><span>--</span> Get in Touch</a>
                     </div>
@@ -66,33 +66,33 @@
         <div class="mobile-menu" id="mobileMenu">
             <nav class="mobile-nav">
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Home</a>
-                    <div class="dropdown-box">
+                    <a href="#" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box-mobile">
                         <a href="#"><span>--</span> Home 1</a>
                         <a href="#"><span>--</span> Home 2</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">About</a>
-                    <div class="dropdown-box">
+                    <a href="#" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box-mobile">
                         <a href="#"><span>--</span> Our Story</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Shop</a>
-                    <div class="dropdown-box">
+                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box-mobile">
                         <a href="#"><span>--</span> Products</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Blog</a>
-                    <div class="dropdown-box">
+                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box-mobile">
                         <a href="#"><span>--</span> Latest News</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Contact</a>
-                    <div class="dropdown-box">
+                    <a href="#" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box-mobile">
                         <a href="#"><span>--</span> Get in Touch</a>
                     </div>
                 </div>
@@ -106,7 +106,8 @@
             <p class="small-caps" style="color:var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">
                 Premium Storage Peripherals</p>
             <h1 class="hero-title" style="font-size: 3.5rem; font-weight: 800; color: #fff; margin: 20px 0;">Innovating
-                <span style="color: var(--primary-red);">Data Storage</span> Since 3 Years</h1>
+                <span style="color: var(--primary-red);">Data Storage</span> Since 3 Years
+            </h1>
             <a href="#products" class="btn btn-red">Discover Solutions</a>
         </div>
     </main>
@@ -186,15 +187,8 @@
         </div>
     </footer>
 
-    <script src="./js/script.js"></script>
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-    </script>
+    <script src="./js/app.js"></script>
+    
 </body>
 
 </html>

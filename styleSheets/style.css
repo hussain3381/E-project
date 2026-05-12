@@ -24,6 +24,8 @@ body {
 
 /* Desktop Nav Underline & Dropdown Fix */
 .desktop-nav {
+    position: relative;
+    top: 20px;
     gap: 30px;
 }
 
@@ -49,6 +51,14 @@ body {
     background: red;
     transition: 0.3s;
 }
+.nav-link span i {
+    font: normal normal normal 14px/1 FontAwesome;
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+.nav-link:hover span i ,.nav-item-wrapper2:hover .nav-link span i ,.dropdown-box-mobile:hover {
+    transform: rotate(90deg);
+}
 
 .nav-item-wrapper:hover .nav-link::after {
     width: 100%;
@@ -56,7 +66,7 @@ body {
 
 .dropdown-box {
     position: absolute;
-    top: 100%;
+    top: 90%;
     left: 0;
     background: #fff;
     min-width: 200px;
@@ -68,7 +78,7 @@ body {
     transition: 0.8s ease;
 }
 
-.nav-item-wrapper.active .dropdown-box {
+.nav-item-wrapper:hover .dropdown-box {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
@@ -135,7 +145,7 @@ body {
     border-bottom: 2px solid #222;
     transition: 0.5s ease-in-out;
     z-index: 1000;
-    padding: 50px 20px;
+    padding: 20px 20px;
 }
 
 .mobile-menu.active {
@@ -145,14 +155,62 @@ body {
 .mobile-nav a {
     display: block;
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-decoration: none;
 }
+.dropdown-box-mobile {
+    position: absolute;
+    top: 80%;
+    left: 90px;
+    background: #fff;
+    min-width:40vw;
+    padding: 20px;
+    border-radius: 12px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.8s ease;
+}
 
-.nav-item-wrapper2:target .dropdown-box {
+.nav-item-wrapper:hover .dropdown-box-mobile {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+}
+
+.dropdown-box-mobile a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.dropdown-box-mobile a span {
+    color: red;
+    opacity: 0;
+    margin-right: 8px;
+    transition: 0.3s;
+}
+
+.dropdown-box-mobile a:hover {
+    color: red;
+    padding-left: 5px;
+}
+
+.dropdown-box-mobile a:hover span {
+    opacity: 1;
+}
+
+
+
+.nav-item-wrapper2:hover .dropdown-box-mobile {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-50px);
 }
 
 .nav-item-wrapper2 {
@@ -160,7 +218,7 @@ body {
     padding: 10px 0;
 }
 
-.nav-item-wrapper:hover .nav-link::after {
+.nav-item-wrapper2:hover .nav-link::after {
     width: 100%;
 }
 
