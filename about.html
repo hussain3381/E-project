@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanGate | About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./styleSheets/style.css">
+
+    <style>
+       /* --- Desktop & General Styles --- */
+.feature-card-premium {
+    background: #161616;
+    border: 1px solid #252525;
+    padding: 40px 30px;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%; /* Saare cards aik hi size ke rahen ge */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-card-premium:hover {
+    transform: translateY(-10px) scale(1.03); /* Mobile safe scaling */
+    border-color: #ff4d4d;
+    box-shadow: 0 15px 30px rgba(255, 77, 77, 0.1);
+    background: #1a1a1a;
+}
+
+/* --- Responsive Media Queries --- */
+
+/* Mobile Phones (768px se niche) */
+@media (max-width: 767px) {
+    .feature-card-premium {
+        padding: 30px 20px; /* Thori kam padding mobile par */
+        margin-bottom: 10px;
+    }
+    
+    .feature-card-premium:hover {
+        transform: translateY(-5px) scale(1.02); /* Mobile par zyada jump nahi karega */
+    }
+
+    h2 {
+        font-size: 2rem !important; /* Heading mobile par thori choti */
+    }
+    
+    .about-hero h1 {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .feature-card-premium {
+        padding: 25px 15px;
+    }
+}
+
+ /* --- card  */
+.zoom-effect-wrapper {
+    padding: 15px;
+    width: 100%;
+}
+
+.zoom-effect {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    overflow: hidden;
+    background: #000;
+    transition: border-color 0.4s ease;
+}
+
+.zoom-effect img {
+    width: 100%;
+    height: auto; /* Image ki ratio kharab nahi hogi */
+    display: block;
+    filter: brightness(0.7);
+    transition: all 0.6s ease;
+}
+
+/* --- Hover Effects --- */
+.zoom-effect:hover img {
+    filter: brightness(1.1) !important;
+    transform: scale(1.08);
+}
+
+.zoom-effect:hover {
+    border-color: #ff4d4d !important;
+}
+
+/* --- Responsive Media Queries --- */
+
+/* 1. Mobile Devices (Phone) */
+@media (max-width: 767px) {
+    .zoom-effect-wrapper {
+        padding: 5px; /* Mobile par space kam karne ke liye */
+    }
+    
+    .zoom-effect {
+        border-radius: 10px; /* Choti screen par thore kam rounded corners */
+    }
+
+    .zoom-effect:hover img {
+        transform: scale(1.04); /* Mobile touch par zyada zoom out na ho jaye */
+    }
+}
+
+/* 2. Tablets (iPad etc.) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .zoom-effect-wrapper {
+        max-width: 90%; /* Tablet par image center mein rahegi */
+        margin: 0 auto;
+    }
+}
+
+        
+    </style>
+</head>
+
+<body>
+<header class="header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="#" class="logo">OCEANGATE</a>
+
+            <nav class="desktop-nav d-none d-lg-flex">
+                <div class="nav-item-wrapper">
+                    <a href="#" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="#" style='color:black;'><span>--</span> Home 1</a>
+                        <a href="#"><span>--</span> Home 2</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="#" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="#"><span>--</span> Our Story</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="#"><span>--</span> Products</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="#"><span>--</span> Latest News</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="#" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="#"><span>--</span> Get in Touch</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-actions d-flex align-items-center">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="far fa-user"></i></a>
+                <div class="cart-icon">
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <span class="cart-badge">1</span>
+                </div>
+                <button class="menu-btn d-lg-none" id="menuBtn">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <div class="nav-item-wrapper2">
+                    <a href="#" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box-mobile">
+                        <a href="#"><span>--</span> Home 1</a>
+                        <a href="#"><span>--</span> Home 2</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper2">
+                    <a href="#" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box-mobile">
+                        <a href="#"><span>--</span> Our journey</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper2">
+                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box-mobile">
+                        <a href="#"><span>--</span> Products</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper2">
+                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box-mobile">
+                        <a href="#"><span>--</span> Latest News</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper2">
+                    <a href="#" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box-mobile">
+                        <a href="#"><span>--</span> Get in Touch</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main
+        style="min-height: 80vh; display: flex; align-items: center; justify-content: center; background: url('https://gadgetz.webflow.io/images/hero-grid.svg') no-repeat center center / cover;">
+        <div class="text-center">
+            <p class="small-caps" style="color:var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">
+                Premium Storage Peripherals</p>
+            <h1 class="hero-title" style="font-size: 3.5rem; font-weight: 800; color: #fff; margin: 20px 0;">Innovating
+                <span style="color: var(--primary-red);">Data Storage</span> Since 3 Years
+            </h1>
+            <a href="#products" class="btn btn-red">Discover Solutions</a>
+        </div>
+    </main>
+    <!-- Our Journey Section -->
+    <section class="about-section-animate" style="background: #0e0e0e; padding: 80px 0;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <div class="zoom-effect-wrapper">
+    <div class="zoom-effect" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); overflow: hidden; background: #000;">
+        <img src="src/img/image copy 2.png" 
+             alt="OceanGate Professional USB Drive" 
+             style="width: 100%; display: block; filter: brightness(0.7); transition: all 0.6s ease;">
+    </div>
+</div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 style="font-size: 2.5rem; font-weight: 700;">Our journey</h2>
+                    <p style="color:#c2c2c2; margin: 20px 0; line-height: 1.8;">
+                        For the last three years, OceanGate has been delivering top-quality storage accessories 
+                        and manufacturing equipment. Starting from optical drives, we expanded into 
+                        high-performance storage machinery.
+                    </p>
+                    <ul style="color:#e4e4e4; line-height: 2; list-style: none; padding: 0;">
+                        <li><i class="fas fa-check-circle me-2" style="color:var(--primary-red);"></i> 100% Quality-Assured Products</li>
+                        <li><i class="fas fa-check-circle me-2" style="color:var(--primary-red);"></i> Environment-friendly manufacturing</li>
+                        <li><i class="fas fa-check-circle me-2" style="color:var(--primary-red);"></i> Premium standards trusted worldwide</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="about-section-animate" style="padding: 60px 0; background: #0d0d0d;">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+            <h2 style="font-size: 2.8rem; font-weight: 800;">
+                Why Experts Choose <span style="color: #ff4d4d;">OceanGate</span>
+            </h2>
+        </div>
+
+        <!-- Cards Row -->
+        <div class="row g-4 justify-content-center">
+            <!-- Card 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="feature-card-premium h-100">
+                    <i class="fas fa-microchip mb-4" style="font-size: 45px; color: #555;"></i>
+                    <h4 class="fw-bold">Advanced Tech</h4>
+                    <p>Cutting-edge hardware for next-level storage production and reliability.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="feature-card-premium h-100">
+                    <i class="fas fa-shield-alt mb-4" style="font-size: 45px; color: #555;"></i>
+                    <h4 class="fw-bold">Secure & Reliable</h4>
+                    <p>Your data is protected with our durable hardware and encryption standards.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="feature-card-premium h-100">
+                    <i class="fas fa-globe mb-4" style="font-size: 45px; color: #555;"></i>
+                    <h4 class="fw-bold">Global Reach</h4>
+                    <p>Supplying premium storage equipment to hundreds of companies worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row pt-5 pb-5">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a href="#" class="footer-logo">OCEANGATE</a>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Modern storage solutions from Karachi, Pakistan.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="#" class="footer-link d-block">About Us</a>
+                    <a href="#" class="footer-link d-block">Shop</a>
+                    <a href="#" class="footer-link d-block">Contact</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Socials</h5>
+                    <div class="social-icons mt-2">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr style="background: #333;">
+            <div class="text-center py-3">
+                <p>© 2026 OceanGate Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Sirf about-section-animate wali classes ko target karega
+        document.querySelectorAll('.about-section-animate').forEach(el => {
+            scrollObserver.observe(el);
+        });
+    </script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
