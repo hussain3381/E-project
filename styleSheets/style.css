@@ -1,14 +1,33 @@
+:root {
+    --bg-dark: #030406;
+    --bg-black: #050507;
+    --bg-panel: rgba(18, 18, 20, 0.95);
+    --footer-bg: #07080b;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-white: #f7f7f7;
+    --text-gray: #b8b8b8;
+    --text-muted: #a8a8c0;
+    --primary-red: #ff4d4d;
+    --primary-red-soft: rgba(255, 77, 77, 0.18);
+}
+
 /* Core Styling */
 body {
-    background: #000;
-    color: #fff;
+    background: var(--bg-dark);
+    color: var(--text-white);
     font-family: 'Lexend', sans-serif;
     margin: 0;
 }
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
 /* header start  */
 .header {
-    background: #000;
-    border-bottom: 1px solid #222;
+    background: var(--bg-black);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -16,10 +35,10 @@ body {
 }
 
 .logo {
-    color: #fff;
-    font-weight: 800;
+    width: 130px;
+    height: auto;
     text-decoration: none;
-    font-size: 1.2rem;
+
 }
 
 /* Desktop Nav Underline & Dropdown Fix */
@@ -51,12 +70,16 @@ body {
     background: red;
     transition: 0.3s;
 }
+
 .nav-link span i {
     font: normal normal normal 14px/1 FontAwesome;
     margin-left: 5px;
     transition: transform 0.3s;
 }
-.nav-link:hover span i ,.nav-item-wrapper2:hover .nav-link span i ,.dropdown-box-mobile:hover {
+
+.nav-link:hover span i,
+.nav-item-wrapper2:hover .nav-link span i,
+.dropdown-box-mobile:hover {
     transform: rotate(90deg);
 }
 
@@ -158,12 +181,13 @@ body {
     margin-bottom: 10px;
     text-decoration: none;
 }
+
 .dropdown-box-mobile {
     position: absolute;
     top: 80%;
     left: 90px;
     background: #fff;
-    min-width:40vw;
+    min-width: 40vw;
     padding: 20px;
     border-radius: 12px;
     visibility: hidden;
@@ -274,52 +298,109 @@ body {
 }
 
 .email-subscription-section {
-    background-color: var(--bg-black);
-    padding: 80px 0;
-    border-bottom: 1px solid #222;
+    background: linear-gradient(180deg, rgba(10, 10, 12, 0.95), rgba(7, 7, 10, 1));
+    padding: 70px 0 40px;
 }
 
-.email-subscription-section h2 {
-    font-size: 2.2rem;
+.email-subscribe-card {
+    background: rgba(15, 15, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 32px 90px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative;
+}
+
+.email-subscribe-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255, 77, 77, 0.18), transparent 22%),
+        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.05), transparent 26%);
+    pointer-events: none;
+}
+
+.email-subtitle {
+    color: var(--primary-red);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 0.85rem;
+}
+
+.email-subscription-section h2,
+.email-subscribe-card h2 {
+    font-size: clamp(2rem, 2.5vw, 2.4rem);
     font-weight: 700;
     color: var(--text-white);
-    max-width: 600px;
-    margin: 0 auto 40px auto;
+    margin: 0;
+}
+
+.email-subtext {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-width: 620px;
+    margin-top: 0.85rem;
 }
 
 .email-form {
-    max-width: 500px;
-    margin: 0 auto;
+    width: 100%;
+    gap: 1rem;
 }
 
-.email-form .input-group {
-    background-color: var(--bg-black);
-    border: 1px solid #333;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.email-form .input-group-text {
-    background: none;
-    border: none;
-    color: var(--text-muted);
-}
-
-.email-form .form-control {
-    background: none;
-    border: none;
+.email-input {
+    min-height: 60px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
     color: var(--text-white);
+    padding: 1rem 1.4rem;
     font-size: 0.95rem;
 }
 
-.email-form .form-control:focus {
-    box-shadow: none;
+.email-input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
 }
 
-.email-form .btn-red {
-    border-radius: 5px;
-    padding: 10px 20px;
-    text-transform: capitalize;
+.email-input:focus {
+    border-color: rgba(255, 77, 77, 0.45);
+    box-shadow: 0 0 0 0.2rem rgba(255, 77, 77, 0.12);
+}
+
+.email-submit-btn {
+    min-height: 60px;
+    padding: 0 2rem;
+    white-space: nowrap;
+}
+
+.btn-red {
+    background: linear-gradient(135deg, var(--primary-red), #ff1f1f);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    box-shadow: 0 15px 30px rgba(255, 77, 77, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-red:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 30px rgba(255, 77, 77, 0.26);
+}
+
+.btn-red:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 77, 77, 0.18);
+}
+
+@media (max-width: 767.98px) {
+    .email-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .email-input,
+    .email-submit-btn {
+        width: 100%;
+    }
 }
 
 .footer h5 {
