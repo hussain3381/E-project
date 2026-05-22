@@ -7,6 +7,8 @@
     <title>OceanGate | Premium Storage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styleSheets/contact.css">
     <link rel="stylesheet" href="./styleSheets/style.css">
 </head>
 
@@ -14,20 +16,21 @@
 
     <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
-            <a href="#" class="logo">OCEANGATE</a>
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
+                    alt="OceanGate Logo"></a>
 
             <nav class="desktop-nav d-none d-lg-flex">
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#" style='color:black;'><span>--</span> Home 1</a>
-                        <a href="#"><span>--</span> Home 2</a>
+                        <a href="index.html" style='color:black;'><span>--</span> Home 1</a>
+                        <a href="index.html"><span>--</span> Home 2</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="About.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Our Story</a>
+                        <a href="#"><span>--</span> Our journey</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
@@ -43,7 +46,8 @@
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./contact.html" class="nav-link">Contact<span><i
+                                class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="#"><span>--</span> Get in Touch</a>
                     </div>
@@ -66,16 +70,16 @@
         <div class="mobile-menu" id="mobileMenu">
             <nav class="mobile-nav">
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Home 1</a>
-                        <a href="#"><span>--</span> Home 2</a>
+                        <a href="index.html"><span>--</span> Home 1</a>
+                        <a href="index.html"><span>--</span> Home 2</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="About.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Our Story</a>
+                        <a href=""><span>--</span> Our journey</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
@@ -91,24 +95,26 @@
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./contact.html" class="nav-link">Contact<span><i
+                                class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box-mobile">
                         <a href="#"><span>--</span> Get in Touch</a>
                     </div>
                 </div>
-        </div>
-        </nav>
+            </nav>
         </div>
     </header>
 
-    
+
     <!-- ================= CONTACT SECTION ================= -->
-    <section class="newsletter-contact-section">
+    <section id="contactSection" class="newsletter-contact-section" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
 
         <div class="newsletter-contact-container">
 
             <!-- Contact Heading -->
-            <div class="contact-page-header">
+            <div class="contact-page-header" data-aos="fade-down" data-aos-duration="900">
+                <span class="section-tag">Business Storage Inquiry</span>
                 <p class="contact-page-subtitle">GET IN TOUCH</p>
 
                 <h2 class="contact-page-title">
@@ -125,26 +131,26 @@
             <div class="contact-page-content">
 
                 <!-- Left Side: Contact Form -->
-                <div class="contact-form-box">
+                <div class="contact-form-box" data-aos="fade-right" data-aos-duration="900">
 
                     <h3>Send Your Inquiry</h3>
 
-                    <form class="contact-form">
-
-                        <div class="contact-input-row">
-                            <input type="text" placeholder="Your Name" required>
-                            <input type="email" placeholder="Your Email" required>
+                    <form id="contactForm" class="contact-form row gx-4 gy-3" action="#" method="post">
+                        <div class="col-12 col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                         </div>
-
-                        <div class="contact-input-row">
-                            <input type="text" placeholder="Product Inquiry" required>
-
+                        <div class="col-12 col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                         </div>
-
-                        <div class="contact-input-row">
-                            <input type="text" placeholder="Company Name" required>
-
-                            <select required>
+                        <div class="col-12">
+                            <input type="text" name="productInquiry" class="form-control" placeholder="Product Inquiry"
+                                required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input type="text" name="company" class="form-control" placeholder="Company Name" required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select name="country" class="form-select" required>
                                 <option value="">Select Country</option>
                                 <option>Pakistan</option>
                                 <option>United States</option>
@@ -158,12 +164,11 @@
                                 <option>China</option>
                             </select>
                         </div>
-
-
-                        <div class="contact-input-row">
-                            <input type="text" placeholder="Phone Number">
-
-                            <select required>
+                        <div class="col-12 col-md-6">
+                            <input type="tel" name="phone" class="form-control" placeholder="Phone Number">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select name="helpType" class="form-select" required>
                                 <option value="">How Can Our Sales Team Help You?</option>
                                 <option>Product Recommendation</option>
                                 <option>Bulk Purchase Inquiry</option>
@@ -175,9 +180,8 @@
                                 <option>Partnership Opportunities</option>
                             </select>
                         </div>
-
-                        <div class="contact-input-row">
-                            <select required>
+                        <div class="col-12 col-md-6">
+                            <select name="productInterest" class="form-select" required>
                                 <option value="">Primary Product of Interest</option>
                                 <option>Internal SSD</option>
                                 <option>External SSD</option>
@@ -189,62 +193,65 @@
                                 <option>SATA SSD</option>
                                 <option>Storage Accessories</option>
                             </select>
-
-                            <input type="number" placeholder="Quantity Required">
                         </div>
-
-
-
-                        <textarea placeholder="Tell us about your storage requirements..." required></textarea>
-
-                        <button type="submit" class="contact-submit-btn">
-                            Send Inquiry
-                        </button>
-
-
-                        <!-- Extra Information Below Inquiry and Contact Info -->
-                        <div class="contact-extra-section">
-
-                            <h2>Contact Our Sales Team</h2>
-
-                            <p>
-                                Learn how OceanGate can help your business with premium SSDs,
-                                HDDs, USB drives, and high-performance storage solutions.
-                            </p>
-
-                            <p>When connecting with our team, you can expect us to:</p>
-
-                            <ul class="contact-benefits-list">
-                                <li>Understand your current storage requirements</li>
-                                <li>Recommend the best products for your needs</li>
-                                <li>Discuss pricing and bulk order options</li>
-                                <li>Answer all technical and product-related questions</li>
-                            </ul>
-
-                            <p><strong>Looking for immediate support?</strong></p>
-                            <p>📞 For sales, call +92 300 1234567</p>
-                            <p>✉️ For technical help, email support@oceangate.com</p>
-
-                            <!-- Trusted Brands -->
-                            <div class="trusted-brands">
-                                <h3>Trusted Storage Brands</h3>
-
-                                <div class="brand-logos">
-                                    <span>💾 Samsung</span>
-                                    <span>⚡ Kingston</span>
-                                    <span>🖴 Western Digital</span>
-                                    <span>🚀 SanDisk</span>
-                                    <span>💿 Seagate</span>
-                                </div>
+                        <div class="col-12 col-md-6">
+                            <input type="number" name="quantity" class="form-control" placeholder="Quantity Required">
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" class="form-control" rows="6"
+                                placeholder="Tell us about your storage requirements..." required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="contact-submit-btn btn btn-red">Send Inquiry</button>
+                        </div>
+                        <div class="col-12">
+                            <div class="contact-highlight">
+                                <strong>Need a fast quote?</strong> Share your product needs and quantity, and our team
+                                will reply with a tailored response within one business day.
                             </div>
+                        </div>
+                    </form>
 
+                    <div class="contact-extra-section" data-aos="fade-up" data-aos-duration="900">
+
+                        <h2>Contact Our Sales Team</h2>
+
+                        <p>
+                            Learn how OceanGate can help your business with premium SSDs,
+                            HDDs, USB drives, and high-performance storage solutions.
+                        </p>
+
+                        <p>When connecting with our team, you can expect us to:</p>
+
+                        <ul class="contact-benefits-list">
+                            <li>Understand your current storage requirements</li>
+                            <li>Recommend the best products for your needs</li>
+                            <li>Discuss pricing and bulk order options</li>
+                            <li>Answer all technical and product-related questions</li>
+                        </ul>
+
+                        <p><strong>Looking for immediate support?</strong></p>
+                        <p>📞 For sales, call +92 300 1234567</p>
+                        <p>✉️ For technical help, email support@oceangate.com</p>
+
+                        <div class="trusted-brands">
+                            <h3>Trusted Storage Brands</h3>
+
+                            <div class="brand-logos">
+                                <span>💾 Samsung</span>
+                                <span>⚡ Kingston</span>
+                                <span>🖴 Western Digital</span>
+                                <span>🚀 SanDisk</span>
+                                <span>💿 Seagate</span>
+                            </div>
                         </div>
 
-                    </form>
+                    </div>
+
                 </div>
 
                 <!-- Right Side: Contact Info -->
-                <div class="contact-info-box">
+                <div class="contact-info-box" data-aos="fade-left" data-aos-duration="900">
 
                     <h3>Contact Information</h3>
 
@@ -367,14 +374,24 @@
 
         <div class="email-subscription-section text-center">
             <div class="container">
-                <h2>Join our mailing list & get exclusive offers and updates</h2>
-                <form class="email-form">
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="far fa-envelope"></i></span>
-                        <input type="email" class="form-control" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-red">Submit Now</button>
+                <div class="email-subscribe-card rounded-5 mx-auto p-4 p-lg-5" data-aos="zoom-in">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-12 col-lg-6 text-lg-start">
+                            <p class="email-subtitle">STAY UPDATED</p>
+                            <h2>Get exclusive storage offers and launch alerts</h2>
+                            <p class="email-subtext">Subscribe for premium product updates, business discounts, and fast
+                                delivery notifications.</p>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <form class="email-form d-flex flex-column flex-sm-row gap-3 align-items-center" action="#"
+                                method="post">
+                                <input type="email" class="form-control email-input" placeholder="Enter your email"
+                                    required>
+                                <button type="submit" class="btn btn-red email-submit-btn">Subscribe Now</button>
+                            </form>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
 
@@ -438,6 +455,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
 
 </body>
