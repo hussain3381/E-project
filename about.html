@@ -4,49 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OceanGate | About Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./styleSheets/style.css">
     <link rel="stylesheet" href="./styleSheets/about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
-
+    <title>OceanGate | About Us</title>
+    
 </head>
-
 <body>
+    <!-- Header navigation -->
     <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
-             <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png" alt="logo"></a>
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png" alt="logo"></a>
 
             <nav class="desktop-nav d-none d-lg-flex">
                 <div class="nav-item-wrapper">
                     <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="./index.html" style='color:black;'><span>--</span> Home 1</a>
+                        <a href="./index.html" style="color:black;"><span>--</span> Home 1</a>
                         <a href="./index.html"><span>--</span> Home 2</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
                     <a href="./about.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="./about.html"><span>--</span> Our Story</a>
+                        <a href="./about.html"><span>--</span> Our journey</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Products</a>
+                        <a href="./shop.html"><span>--</span> Products</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./blog.html" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Latest News</a>
+                        <a href="./blog.html"><span>--</span> Latest News</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="./contact.html" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./contact.html" class="nav-link">Contact<span><i
+                                class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="./contact.html"><span>--</span> Get in Touch</a>
                     </div>
@@ -54,11 +54,17 @@
             </nav>
 
             <div class="header-actions d-flex align-items-center">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="far fa-user"></i></a>
+                <div class="search-wrapper me-3">
+                    <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
+                    <div class="search-expand" aria-hidden="true">
+                        <input id="globalSearchInput" class="search-input" type="text" placeholder="Search products, e.g. Kingston SSD" autocomplete="off">
+                        <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
                 <div class="cart-icon">
                     <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                    <span class="cart-badge">1</span>
+                    <span class="cart-badge" id="cartCount">1</span>
                 </div>
                 <button class="menu-btn d-lg-none" id="menuBtn">
                     <span></span><span></span><span></span>
@@ -68,37 +74,11 @@
 
         <div class="mobile-menu" id="mobileMenu">
             <nav class="mobile-nav">
-                <div class="nav-item-wrapper2">
-                    <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="./index.html"><span>--</span> Home 1</a>
-                        <a href="./index.html"><span>--</span> Home 2</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="./about.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="./about.html"><span>--</span> Our journey</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="./shop.html"><span>--</span> Products</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="./blog.html" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="./blog.html"><span>--</span> Latest News</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="./contact.html" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="./contact.html"><span>--</span> Get in Touch</a>
-                    </div>
-                </div>
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About</a>
+                <a href="./shop.html">Shop</a>
+                <a href="./blog.html">Blog</a>
+                <a href="./contact.html">Contact</a>
             </nav>
         </div>
     </header>
@@ -111,7 +91,7 @@
             <h1 class="hero-title" style="font-size: 3.5rem; font-weight: 800; color: #fff; margin: 20px 0;">Innovating
                 <span style="color: var(--primary-red);">Data Storage</span> Since 3 Years
             </h1>
-            <a href="#products" class="btn btn-red">Discover Solutions</a>
+            <a href="./shop.html" class="btn btn-red">Discover Solutions</a>
         </div>
     </main>
     <!-- Our Journey Section -->
@@ -155,6 +135,166 @@
             </div>
         </div>
     </section>
+
+    <!-- ================= TIMELINE SECTION ================= -->
+    <section style="background: var(--bg-dark); padding: 80px 0; border-top: 1px solid rgba(255, 77, 77, 0.15);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p style="color: var(--primary-red); text-transform: uppercase; letter-spacing: 0.35em; font-size: 0.85rem; margin-bottom: 15px;">Our Evolution</p>
+                <h2 style="font-size: 2.8rem; font-weight: 800; color: var(--text-white);">OceanGate Timeline</h2>
+            </div>
+
+            <!-- Timeline -->
+            <div style="position: relative; max-width: 800px; margin: 0 auto;">
+                <!-- Timeline Line -->
+                <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-red), transparent); transform: translateX(-50%);"></div>
+
+                <!-- 2023 -->
+                <div style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="flex: 1; text-align: right; padding-right: 30px;">
+                            <h4 style="color: var(--text-white); font-weight: 800;">Founded</h4>
+                            <p style="color: var(--text-gray); margin: 0;">OceanGate Storage was established with a vision to revolutionize data storage technology.</p>
+                        </div>
+                        <div style="position: relative; z-index: 10; width: 40px; height: 40px; background: var(--primary-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-rocket" style="color: white; font-size: 1rem;"></i>
+                        </div>
+                        <div style="flex: 1; padding-left: 30px;">
+                            <p style="color: var(--primary-red); font-weight: 700; font-size: 1.2rem; margin: 0;">2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="200">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px; flex-direction: row-reverse;">
+                        <div style="flex: 1; text-align: left; padding-left: 30px;">
+                            <h4 style="color: var(--text-white); font-weight: 800;">First 1000 Units Sold</h4>
+                            <p style="color: var(--text-gray); margin: 0;">Milestone: Shipped first 1000 SSD units, marking our entry into solid-state storage market.</p>
+                        </div>
+                        <div style="position: relative; z-index: 10; width: 40px; height: 40px; background: var(--primary-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-box" style="color: white; font-size: 1rem;"></i>
+                        </div>
+                        <div style="flex: 1; padding-right: 30px; text-align: right;">
+                            <p style="color: var(--primary-red); font-weight: 700; font-size: 1.2rem; margin: 0;">2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="300">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="flex: 1; text-align: right; padding-right: 30px;">
+                            <h4 style="color: var(--text-white); font-weight: 800;">Global Expansion</h4>
+                            <p style="color: var(--text-gray); margin: 0;">Expanded operations to 15+ countries, became trusted by enterprise clients worldwide.</p>
+                        </div>
+                        <div style="position: relative; z-index: 10; width: 40px; height: 40px; background: var(--primary-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-globe" style="color: white; font-size: 1rem;"></i>
+                        </div>
+                        <div style="flex: 1; padding-left: 30px;">
+                            <p style="color: var(--primary-red); font-weight: 700; font-size: 1.2rem; margin: 0;">2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2026 -->
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px; flex-direction: row-reverse;">
+                        <div style="flex: 1; text-align: left; padding-left: 30px;">
+                            <h4 style="color: var(--text-white); font-weight: 800;">Today & Beyond</h4>
+                            <p style="color: var(--text-gray); margin: 0;">Continuing innovation with AI-integrated storage solutions and next-gen storage media.</p>
+                        </div>
+                        <div style="position: relative; z-index: 10; width: 40px; height: 40px; background: var(--primary-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-star" style="color: white; font-size: 1rem;"></i>
+                        </div>
+                        <div style="flex: 1; padding-right: 30px; text-align: right;">
+                            <p style="color: var(--primary-red); font-weight: 700; font-size: 1.2rem; margin: 0;">2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TEAM SECTION ================= -->
+    <section style="background: var(--bg-black); padding: 80px 0; border-top: 1px solid rgba(255, 77, 77, 0.15);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p style="color: var(--primary-red); text-transform: uppercase; letter-spacing: 0.35em; font-size: 0.85rem; margin-bottom: 15px;">Leadership</p>
+                <h2 style="font-size: 2.8rem; font-weight: 800; color: var(--text-white);">Meet Our Team</h2>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="row g-4 justify-content-center">
+                <!-- Team Member 1: Hussain -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: var(--bg-panel); border: 1px solid rgba(255, 77, 77, 0.15); border-radius: 18px; padding: 30px; text-align: center; transition: all 0.4s ease; height: 100%;" class="team-card" onmouseover="this.style.borderColor='var(--primary-red)'; this.style.boxShadow='0 25px 50px rgba(255, 77, 77, 0.15)';" onmouseout="this.style.borderColor='rgba(255, 77, 77, 0.15)'; this.style.boxShadow='none';">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-red), #ff1f1f); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);">
+                            <i class="fas fa-user-tie" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <h4 style="color: var(--text-white); font-weight: 800; margin-bottom: 8px;">Hussain</h4>
+                        <p style="color: var(--primary-red); font-weight: 700; font-size: 0.95rem; margin-bottom: 15px;">Founder & CEO</p>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                            Visionary leader with 8+ years in storage technology. Pioneered OceanGate's mission to make premium storage accessible globally.
+                        </p>
+                        <div style="display: flex; justify-content: center; gap: 15px;">
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2: Esha Eman -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div style="background: var(--bg-panel); border: 1px solid rgba(255, 77, 77, 0.15); border-radius: 18px; padding: 30px; text-align: center; transition: all 0.4s ease; height: 100%;" class="team-card" onmouseover="this.style.borderColor='var(--primary-red)'; this.style.boxShadow='0 25px 50px rgba(255, 77, 77, 0.15)';" onmouseout="this.style.borderColor='rgba(255, 77, 77, 0.15)'; this.style.boxShadow='none';">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-red), #ff1f1f); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);">
+                            <i class="fas fa-user-circle" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <h4 style="color: var(--text-white); font-weight: 800; margin-bottom: 8px;">Esha Eman</h4>
+                        <p style="color: var(--primary-red); font-weight: 700; font-size: 0.95rem; margin-bottom: 15px;">CTO & Product Lead</p>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                            Tech innovator with expertise in hardware optimization. Leads product development and ensures cutting-edge storage solutions.
+                        </p>
+                        <div style="display: flex; justify-content: center; gap: 15px;">
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3: Syeda Hooria Batool -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div style="background: var(--bg-panel); border: 1px solid rgba(255, 77, 77, 0.15); border-radius: 18px; padding: 30px; text-align: center; transition: all 0.4s ease; height: 100%;" class="team-card" onmouseover="this.style.borderColor='var(--primary-red)'; this.style.boxShadow='0 25px 50px rgba(255, 77, 77, 0.15)';" onmouseout="this.style.borderColor='rgba(255, 77, 77, 0.15)'; this.style.boxShadow='none';">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-red), #ff1f1f); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);">
+                            <i class="fas fa-user-shield" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <h4 style="color: var(--text-white); font-weight: 800; margin-bottom: 8px;">Syeda Hooria Batool</h4>
+                        <p style="color: var(--primary-red); font-weight: 700; font-size: 0.95rem; margin-bottom: 15px;">COO & Operations Lead</p>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                            Operations strategist ensuring smooth supply chain and customer satisfaction. Passionate about scaling sustainable business practices.
+                        </p>
+                        <div style="display: flex; justify-content: center; gap: 15px;">
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Why Choose Us Section -->
     <section class="about-section-animate" style="padding: 60px 0; background: #0d0d0d;">
         <div class="container">
@@ -197,12 +337,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer and subscription -->
     <footer class="footer">
 
         <div class="email-subscription-section text-center">
             <div class="container">
-                <div class="email-subscribe-card rounded-5 mx-auto p-4 p-lg-5" data-aos="fade-up">
+                <div class="email-subscribe-card mx-auto p-4 p-lg-5" data-aos="fade-up">
                     <div class="row align-items-center gy-4">
                         <div class="col-12 col-lg-6 text-lg-start" data-aos="fade-right">
                             <p class="email-subtitle">STAY UPDATED</p>
@@ -223,7 +363,7 @@
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a href="#" class="footer-logo">OCEANGATE</a>
+                    <a href="./index.html" class="footer-logo">OCEANGATE</a>
                     <p class="pe-lg-5" style="color: var(--text-gray); font-size: 0.9rem;">
                         Providing state-of-the-art machinery for production of storage devices from floppy disks to
                         optical storage.
@@ -232,29 +372,29 @@
 
                 <div class="col-6 col-md-3 col-lg-2">
                     <h5>Useful Links</h5>
-                    <a href="#" class="footer-link">Home</a>
-                    <a href="#" class="footer-link">About</a>
-                    <a href="#" class="footer-link">Blog</a>
-                    <a href="#" class="footer-link">Shop</a>
-                    <a href="#" class="footer-link">Contact</a>
+                    <a href="./index.html" class="footer-link">Home</a>
+                    <a href="./about.html" class="footer-link">About</a>
+                    <a href="./blog.html" class="footer-link">Blog</a>
+                    <a href="./shop.html" class="footer-link">Shop</a>
+                    <a href="./contact.html" class="footer-link">Contact</a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-2">
                     <h5>Quick Links</h5>
-                    <a href="#" class="footer-link">About Us</a>
-                    <a href="#" class="footer-link">FAQ</a>
-                    <a href="#" class="footer-link">Shop</a>
-                    <a href="#" class="footer-link">Log-In</a>
-                    <a href="#" class="footer-link">Licensing</a>
+                    <a href="./about.html" class="footer-link">About Us</a>
+                    <a href="./contact.html" class="footer-link">FAQ</a>
+                    <a href="./shop.html" class="footer-link">Shop</a>
+                    <a href="./contact.html" class="footer-link">Log-In</a>
+                    <a href="./contact.html" class="footer-link">Licensing</a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
                     <h5>Extra Links</h5>
-                    <a href="#" class="footer-link">Home-2</a>
-                    <a href="#" class="footer-link">Home-3</a>
-                    <a href="#" class="footer-link">About-2</a>
-                    <a href="#" class="footer-link">About-3</a>
-                    <a href="#" class="footer-link">Blog-2</a>
+                    <a href="./index.html" class="footer-link">Home-2</a>
+                    <a href="./index.html" class="footer-link">Home-3</a>
+                    <a href="./about.html" class="footer-link">About-2</a>
+                    <a href="./about.html" class="footer-link">About-3</a>
+                    <a href="./blog.html" class="footer-link">Blog-2</a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">

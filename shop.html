@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanGate | Shop - Premium Storage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styleSheets/style.css">
+    <link rel="stylesheet" href="./styleSheets/shop.css">
+</head>
+
+<body>
+    <!-- Header navigation -->
+    <header class="header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.svg" alt="OceanGate Logo"></a>
+            <nav class="desktop-nav d-none d-lg-flex">
+                <div class="nav-item-wrapper">
+                    <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./index.html" style="color:black;"><span>--</span> Home 1</a>
+                        <a href="./index.html"><span>--</span> Home 2</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./about.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./about.html"><span>--</span> Our journey</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./shop.html"><span>--</span> Products</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./blog.html" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./blog.html"><span>--</span> Latest News</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./contact.html" class="nav-link">Contact<span><i
+                                class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./contact.html"><span>--</span> Get in Touch</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-actions d-flex align-items-center">
+                <div class="search-wrapper me-3">
+                    <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
+                    <div class="search-expand" aria-hidden="true">
+                        <input id="globalSearchInput" class="search-input" type="text" placeholder="Search products, e.g. Kingston SSD" autocomplete="off">
+                        <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
+                <button class="menu-btn d-lg-none" id="menuBtn"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="shop.html">Shop</a>
+                <a href="comparison.html">Compare</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Promotion showcase rows (placeholders) -->
+    <section class="shop-promotions" style="padding: 30px 0 0;">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="promo-banner" style="background: linear-gradient(90deg, rgba(157,0,0,0.08), rgba(0,0,0,0.02)); padding: 26px; border: 1px solid rgba(92,92,92,0.18);">
+                        <div style="display:flex; gap:18px; align-items:center;">
+                            <div style="width:86px; height:86px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.03);">
+                                <i class="fas fa-microchip" style="font-size:32px; color:var(--primary-red);"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin:0 0 6px;">Performance Spotlight</h4>
+                                <p style="margin:0; color:var(--text-gray);">Featured SSD mounts: NVMe-ready modules for professional workflows.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="promo-banner" style="background: linear-gradient(90deg, rgba(0,0,0,0.02), rgba(157,0,0,0.06)); padding: 26px; border: 1px solid rgba(92,92,92,0.18);">
+                        <div style="display:flex; gap:18px; align-items:center;">
+                            <div style="width:86px; height:86px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.03);">
+                                <i class="fas fa-compact-disc" style="font-size:32px; color:var(--primary-red);"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin:0 0 6px;">Archival Media Offer</h4>
+                                <p style="margin:0; color:var(--text-gray);">Bulk optical media packs, optimized for long-term preservation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop-page-header" style="background: var(--bg-black); padding: 60px 0; border-bottom: 1px solid rgba(255, 77, 77, 0.15);">
+        <div class="container text-center">
+            <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--text-white); margin-bottom: 12px;">Browse Storage Solutions</h1>
+            <p style="color: var(--text-gray); font-size: 1rem; margin: 0;">Discover premium optical media and high-speed SSDs in a curated marketplace experience.</p>
+        </div>
+    </section>
+
+    <section id="shopPage" style="background: var(--bg-dark); padding: 60px 0;">
+        <div class="container-fluid">
+            <div class="row g-4">
+                <div class="col-lg-3" data-aos="fade-right">
+                    <div class="filters-container">
+                        <div class="filter-header">
+                            <h5><i class="fas fa-sliders-h" style="margin-right: 10px;"></i> Filters</h5>
+                            <button onclick="resetFilters()">Reset</button>
+                        </div>
+
+                        <details class="filter-panel" open>
+                            <summary>Brand</summary>
+                            <div class="filter-options">
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="sony">Sony</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="samsung">Samsung</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="kingston">Kingston</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="verbatim">Verbatim</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="seagate">Seagate</label>
+                            </div>
+                        </details>
+
+                        <details class="filter-panel" open>
+                            <summary>Category</summary>
+                            <div class="filter-options">
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="cd-r">CD-R</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="dvd-rw">DVD-RW</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="blu-ray">Blu-ray</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="ssd">SSD</label>
+                            </div>
+                        </details>
+
+                        <details class="filter-panel" open>
+                            <summary>Speed</summary>
+                            <div class="filter-options">
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="10">10X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="16">16X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="52">52X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="150">150 MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="550">550 MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="570">570 MB/s</label>
+                            </div>
+                        </details>
+
+                        <details class="filter-panel" open>
+                            <summary>Price Range</summary>
+                            <div class="filter-options">
+                                <span class="filter-range-label">Max Price: $<span id="priceValue">200</span></span>
+                                <input type="range" class="form-range price-filter" id="priceRange" min="0" max="200" value="200" onchange="filterProducts()">
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="col-lg-9" data-aos="fade-left">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 30px;">
+                        <p style="color: var(--text-gray); margin: 0; font-size: 0.95rem;">Showing <span id="productCount">0</span> products</p>
+                        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+                            <label style="color: var(--text-gray); margin-bottom: 0; font-size: 0.9rem; font-weight: 500;">Sort By:</label>
+                            <div style="position: relative; display: inline-block; min-width: 220px;">
+                                <select id="sortBy" class="form-select" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%); border: 1.5px solid rgba(157, 0, 0, 0.3); border-radius: 8px; color: #000; min-width: 220px; padding: 11px 40px 11px 16px; font-weight: 500; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+                                    <option value="newest">Newest</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="popular">Most Popular</option>
+                                </select>
+                                <i class="fas fa-chevron-down" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #000; pointer-events: none; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="productGrid" class="row g-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h4 style="color: var(--text-white); margin: 0;">Shopping Cart</h4>
+            <button style="background: none; border: none; color: var(--text-gray); font-size: 1.5rem; cursor: pointer; padding: 0;" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="cartItems" class="cart-items-container">
+            <p style="color: var(--text-muted); text-align: center; padding: 40px 20px;">Your cart is empty</p>
+        </div>
+        <div class="cart-drawer-footer">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+                <p style="color: var(--text-gray); margin: 0;">Subtotal:</p>
+                <p style="color: var(--text-white); font-weight: 700; margin: 0;">$<span id="cartTotal">0.00</span></p>
+            </div>
+            <a href="checkout.html" class="btn btn-red" style="width: 100%; display: inline-flex; justify-content: center; padding: 14px; border-radius: 6px; font-weight: 600;">Proceed to Checkout</a>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Footer and subscription -->
+    <footer class="footer">
+        <div class="email-subscription-section text-center">
+            <div class="container">
+                <div class="email-subscribe-card mx-auto p-4 p-lg-5" data-aos="fade-up">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-12 col-lg-6 text-lg-start" data-aos="fade-right">
+                            <p class="email-subtitle">STAY UPDATED</p>
+                            <h2>Get exclusive storage offers</h2>
+                            <p class="email-subtext">Subscribe for premium product updates and business discounts.</p>
+                        </div>
+                        <div class="col-12 col-lg-6" data-aos="fade-left">
+                            <form class="email-form d-flex flex-column flex-sm-row gap-3 align-items-center" action="#" method="post">
+                                <input type="email" class="form-control email-input" placeholder="Enter your email" required>
+                                <button type="submit" class="btn btn-red email-submit-btn">Subscribe Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row pt-5 pb-5">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a href="index.html" class="footer-logo">OCEANGATE</a>
+                    <p class="pe-lg-5" style="color: var(--text-gray); font-size: 0.9rem;">Premium storage devices for all your data needs.</p>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5>Quick Links</h5>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="shop.html" class="footer-link">Shop</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5>Support</h5>
+                    <a href="contact.html" class="footer-link">FAQ</a>
+                    <a href="contact.html" class="footer-link">Shipping Info</a>
+                    <a href="contact.html" class="footer-link">Returns</a>
+                    <a href="contact.html" class="footer-link">Warranty</a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
+                    <h5>Company</h5>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="contact.html" class="footer-link">Careers</a>
+                    <a href="contact.html" class="footer-link">Partners</a>
+                    <a href="contact.html" class="footer-link">Licensing</a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
+                    <h5>Get in Touch</h5>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Karachi, Pakistan</p>
+                    <a href="mailto:support@oceangate.com" class="footer-link">support@oceangate.com</a>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-section text-center">
+                <p>© 2026 OceanGate Limited. All rights reserved.</p>
+                <div class="social-icons mobile-social d-sm-none">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
