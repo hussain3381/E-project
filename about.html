@@ -4,196 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OceanGate | About Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./styleSheets/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
-   <style>
+    <link rel="stylesheet" href="./styleSheets/about.css">
+    <title>OceanGate | About Us</title>
     
-/* --- 1. GLOBAL SETTINGS --- */
-:root {
-    --primary-red: #ff4d4d;
-    --bg-black: #0a0a0a;
-    --card-bg: #161616;
-    --border-color: #252525;
-    --text-dim: #c2c2c2;
-}
-
-/* --- 2. WHY EXPERTS CHOOSE US (FEATURE CARDS) --- */
-.feature-card-premium {
-    background: var(--card-bg);
-    /* Border Radius Fix */
-    border-radius: 20px !important; 
-    border: 1px solid var(--border-color);
-    padding: 40px 30px;
-    /* Smooth Transition for Lift Effect */
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Hover Effect: Card Lift & Glow */
-@media (min-width: 992px) {
-    .feature-card-premium:hover {
-        transform: translateY(-15px) scale(1.02);
-        border-color: var(--primary-red);
-        box-shadow: 0 20px 40px rgba(255, 77, 77, 0.15);
-        background: #1a1a1a;
-    }
-}
-
-.feature-card-premium i {
-    font-size: 2.8rem;
-    color: var(--primary-red);
-    margin-bottom: 22px;
-    transition: 0.3s;
-}
-
-.feature-card-premium:hover i {
-    transform: scale(1.1);
-}
-
-/* --- 3. OUR JOURNEY SECTION --- */
-.journey-title {
-    font-family: 'Dancing Script', cursive; 
-    font-size: 3.5rem;
-    color: #f1d3d3;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 30px;
-}
-
-.journey-title::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 65%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-red), transparent);
-    border-radius: 2px;
-}
-
-.journey-img-box {
-    border-radius: 30px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 77, 77, 0.2);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-/* Journey Image Lift Effect */
-.journey-img-box:hover {
-    transform: translateY(-15px);
-    border-color: var(--primary-red);
-    box-shadow: 0 25px 50px rgba(255, 77, 77, 0.2);
-}
-
-.journey-img-box img {
-    width: 100%;
-    display: block;
-    filter: brightness(0.8);
-    transition: 0.5s;
-}
-
-.journey-img-box:hover img {
-    filter: brightness(1);
-}
-
-/* --- 4. RESPONSIVE MEDIA QUERIES --- */
-
-/* Mobile Phones */
-@media (max-width: 767px) {
-    .feature-card-premium {
-        padding: 30px 20px;
-        border-radius: 18px !important; /* Mobile par rounded corners */
-        margin-bottom: 20px;
-    }
-
-    /* Mobile par touch lift kam rakha hai taake glitch na ho */
-    .feature-card-premium:hover {
-        transform: translateY(-8px);
-    }
-
-    .journey-title {
-        font-size: 2.6rem;
-        text-align: center;
-        display: block;
-    }
-
-    .journey-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50%;
-    }
-
-    .journey-img-box {
-        border-radius: 20px;
-        margin-top: 20px;
-    }
-}
-
-/* Tablets */
-@media (min-width: 768px) and (max-width: 991px) {
-    .journey-img-box {
-        max-width: 85%;
-        margin: 0 auto 30px;
-    }
-}
-</style>
 </head>
-
 <body>
-<header class="header">
+    <!-- Header navigation -->
+    <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
-            <a href="#" class="logo">OCEANGATE</a>
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png" alt="logo"></a>
 
             <nav class="desktop-nav d-none d-lg-flex">
                 <div class="nav-item-wrapper">
-                    <a href="index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="index.html" style='color:black;'><span>--</span> Home 1</a>
-                        <a href="index.html"><span>--</span> Home 2</a>
+                        <a href="./index.html" style="color:black;"><span>--</span> Home 1</a>
+                        <a href="./index.html"><span>--</span> Home 2</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./about.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Our Story</a>
+                        <a href="./about.html"><span>--</span> Our journey</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Products</a>
+                        <a href="./shop.html"><span>--</span> Products</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./blog.html" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Latest News</a>
+                        <a href="./blog.html"><span>--</span> Latest News</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./contact.html" class="nav-link">Contact<span><i
+                                class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Get in Touch</a>
+                        <a href="./contact.html"><span>--</span> Get in Touch</a>
                     </div>
                 </div>
             </nav>
 
             <div class="header-actions d-flex align-items-center">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="far fa-user"></i></a>
+                <div class="search-wrapper me-3">
+                    <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
+                    <div class="search-expand" aria-hidden="true">
+                        <input id="globalSearchInput" class="search-input" type="text" placeholder="Search products, e.g. Kingston SSD" autocomplete="off">
+                        <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
                 <div class="cart-icon">
                     <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                    <span class="cart-badge">1</span>
+                    <span class="cart-badge" id="cartCount">1</span>
                 </div>
                 <button class="menu-btn d-lg-none" id="menuBtn">
                     <span></span><span></span><span></span>
@@ -203,37 +74,11 @@
 
         <div class="mobile-menu" id="mobileMenu">
             <nav class="mobile-nav">
-                <div class="nav-item-wrapper2">
-                    <a href="index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="index.html"><span>--</span> Home 1</a>
-                        <a href="index.html"><span>--</span> Home 2</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="About.html"nav-link>About<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href=""><span>--</span> Our journey</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Products</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Latest News</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Get in Touch</a>
-                    </div>
-                </div>
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About</a>
+                <a href="./shop.html">Shop</a>
+                <a href="./blog.html">Blog</a>
+                <a href="./contact.html">Contact</a>
             </nav>
         </div>
     </header>
@@ -246,113 +91,279 @@
             <h1 class="hero-title" style="font-size: 3.5rem; font-weight: 800; color: #fff; margin: 20px 0;">Innovating
                 <span style="color: var(--primary-red);">Data Storage</span> Since 3 Years
             </h1>
-            <a href="#products" class="btn btn-red">Discover Solutions</a>
+            <a href="./shop.html" class="btn btn-red">Discover Solutions</a>
         </div>
     </main>
     <!-- Our Journey Section -->
-   <section class="about-section-animate" style="background: #000; padding: 100px 0;">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Image Side -->
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <div class="journey-img-box">
-                    <img src="src/img/image copy 3.png" 
-                         alt="OceanGate Journey" 
-                         style="width: 100%; display: block; filter: brightness(0.8); transition: 0.6s;"
-                         onmouseover="this.style.filter='brightness(1)'"
-                         onmouseout="this.style.filter='brightness(0.8)'">
+    <section class="about-section-animate" style="background: #000; padding: 100px 0;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Image Side -->
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="journey-img-box">
+                        <img src="src/img/image copy 3.png" alt="OceanGate Journey"
+                            style="width: 100%; display: block; filter: brightness(0.8); transition: 0.6s;"
+                            onmouseover="this.style.filter='brightness(1)'"
+                            onmouseout="this.style.filter='brightness(0.8)'">
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 class="journey-title">Our journey</h2>
+                    <p style="color:#c2c2c2; font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                        For the last three years, OceanGate has been delivering top-quality storage accessories
+                        and manufacturing equipment. Starting from optical drives, we expanded into
+                        high-performance storage machinery.
+                    </p>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-center" style="color: #eee;">
+                            <i class="fas fa-certificate me-3" style="color:#ff4d4d;"></i>
+                            100% Quality-Assured Products
+                        </li>
+                        <li class="mb-3 d-flex align-items-center" style="color: #eee;">
+                            <i class="fas fa-leaf me-3" style="color:#ff4d4d;"></i>
+                            Environment-friendly manufacturing
+                        </li>
+                        <li class="mb-3 d-flex align-items-center" style="color: #eee;">
+                            <i class="fas fa-globe-americas me-3" style="color:#ff4d4d;"></i>
+                            Premium standards trusted worldwide
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Text Side -->
-            <div class="col-lg-6 ps-lg-5">
-                <h2 class="journey-title">Our journey</h2>
-                <p style="color:#c2c2c2; font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-                    For the last three years, OceanGate has been delivering top-quality storage accessories 
-                    and manufacturing equipment. Starting from optical drives, we expanded into 
-                    high-performance storage machinery.
-                </p>
-                
-                <ul class="list-unstyled">
-                    <li class="mb-3 d-flex align-items-center" style="color: #eee;">
-                        <i class="fas fa-certificate me-3" style="color:#ff4d4d;"></i> 
-                        100% Quality-Assured Products
-                    </li>
-                    <li class="mb-3 d-flex align-items-center" style="color: #eee;">
-                        <i class="fas fa-leaf me-3" style="color:#ff4d4d;"></i> 
-                        Environment-friendly manufacturing
-                    </li>
-                    <li class="mb-3 d-flex align-items-center" style="color: #eee;">
-                        <i class="fas fa-globe-americas me-3" style="color:#ff4d4d;"></i> 
-                        Premium standards trusted worldwide
-                    </li>
-                </ul>
+    <!-- ================= TIMELINE SECTION ================= -->
+    <section style="background: var(--bg-dark); padding: 80px 0; border-top: 1px solid rgba(255, 77, 77, 0.15);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p style="color: var(--primary-red); text-transform: uppercase; letter-spacing: 0.35em; font-size: 0.85rem; margin-bottom: 15px;">Our Evolution</p>
+                <h2 style="font-size: 2.8rem; font-weight: 800; color: var(--text-white);">OceanGate Timeline</h2>
+            </div>
+
+            <!-- Timeline -->
+            <div style="position: relative; max-width: 800px; margin: 0 auto;">
+                <!-- Timeline Line -->
+                <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-red), transparent); transform: translateX(-50%);"></div>
+
+                <!-- 2023 -->
+                <div style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="flex: 1; text-align: right; padding-right: 30px;">
+                            <h4 style="color: var(--text-white); font-weight: 800;">Founded</h4>
+                            <p style="color: var(--text-gray); margin: 0;">OceanGate Storage was established with a vision to revolutionize data storage technology.</p>
+                        </div>
+                        <div style="position: relative; z-index: 10; width: 40px; height: 40px; background: var(--primary-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-rocket" style="color: white; font-size: 1rem;"></i>
+                        </div>
+                        <div style="flex: 1; padding-left: 30px;">
+                            <p style="color: var(--primary-red); font-weight: 700; font-size: 1.2rem; margin: 0;">2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="200">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px; flex-direction: row-reverse;">
+                        <div style="flex: 1; text-align: left; padding-left: 30px;">
+                            <h4 style="color: var(--text-white); font-weight: 800;">First 1000 Units Sold</h4>
+                            <p style="color: var(--text-gray); margin: 0;">Milestone: Shipped first 1000 SSD units, marking our entry into solid-state storage market.</p>
+                        </div>
+                        <div style="position: relative; z-index: 10; width: 40px; height: 40px; background: var(--primary-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-box" style="color: white; font-size: 1rem;"></i>
+                        </div>
+                        <div style="flex: 1; padding-right: 30px; text-align: right;">
+                            <p style="color: var(--primary-red); font-weight: 700; font-size: 1.2rem; margin: 0;">2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="300">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="flex: 1; text-align: right; padding-right: 30px;">
+                            <h4 style="color: var(--text-white); font-weight: 800;">Global Expansion</h4>
+                            <p style="color: var(--text-gray); margin: 0;">Expanded operations to 15+ countries, became trusted by enterprise clients worldwide.</p>
+                        </div>
+                        <div style="position: relative; z-index: 10; width: 40px; height: 40px; background: var(--primary-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-globe" style="color: white; font-size: 1rem;"></i>
+                        </div>
+                        <div style="flex: 1; padding-left: 30px;">
+                            <p style="color: var(--primary-red); font-weight: 700; font-size: 1.2rem; margin: 0;">2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2026 -->
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px; flex-direction: row-reverse;">
+                        <div style="flex: 1; text-align: left; padding-left: 30px;">
+                            <h4 style="color: var(--text-white); font-weight: 800;">Today & Beyond</h4>
+                            <p style="color: var(--text-gray); margin: 0;">Continuing innovation with AI-integrated storage solutions and next-gen storage media.</p>
+                        </div>
+                        <div style="position: relative; z-index: 10; width: 40px; height: 40px; background: var(--primary-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-star" style="color: white; font-size: 1rem;"></i>
+                        </div>
+                        <div style="flex: 1; padding-right: 30px; text-align: right;">
+                            <p style="color: var(--primary-red); font-weight: 700; font-size: 1.2rem; margin: 0;">2026</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- ================= TEAM SECTION ================= -->
+    <section style="background: var(--bg-black); padding: 80px 0; border-top: 1px solid rgba(255, 77, 77, 0.15);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p style="color: var(--primary-red); text-transform: uppercase; letter-spacing: 0.35em; font-size: 0.85rem; margin-bottom: 15px;">Leadership</p>
+                <h2 style="font-size: 2.8rem; font-weight: 800; color: var(--text-white);">Meet Our Team</h2>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="row g-4 justify-content-center">
+                <!-- Team Member 1: Hussain -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: var(--bg-panel); border: 1px solid rgba(255, 77, 77, 0.15); border-radius: 18px; padding: 30px; text-align: center; transition: all 0.4s ease; height: 100%;" class="team-card" onmouseover="this.style.borderColor='var(--primary-red)'; this.style.boxShadow='0 25px 50px rgba(255, 77, 77, 0.15)';" onmouseout="this.style.borderColor='rgba(255, 77, 77, 0.15)'; this.style.boxShadow='none';">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-red), #ff1f1f); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);">
+                            <i class="fas fa-user-tie" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <h4 style="color: var(--text-white); font-weight: 800; margin-bottom: 8px;">Hussain</h4>
+                        <p style="color: var(--primary-red); font-weight: 700; font-size: 0.95rem; margin-bottom: 15px;">Founder & CEO</p>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                            Visionary leader with 8+ years in storage technology. Pioneered OceanGate's mission to make premium storage accessible globally.
+                        </p>
+                        <div style="display: flex; justify-content: center; gap: 15px;">
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2: Esha Eman -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div style="background: var(--bg-panel); border: 1px solid rgba(255, 77, 77, 0.15); border-radius: 18px; padding: 30px; text-align: center; transition: all 0.4s ease; height: 100%;" class="team-card" onmouseover="this.style.borderColor='var(--primary-red)'; this.style.boxShadow='0 25px 50px rgba(255, 77, 77, 0.15)';" onmouseout="this.style.borderColor='rgba(255, 77, 77, 0.15)'; this.style.boxShadow='none';">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-red), #ff1f1f); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);">
+                            <i class="fas fa-user-circle" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <h4 style="color: var(--text-white); font-weight: 800; margin-bottom: 8px;">Esha Eman</h4>
+                        <p style="color: var(--primary-red); font-weight: 700; font-size: 0.95rem; margin-bottom: 15px;">CTO & Product Lead</p>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                            Tech innovator with expertise in hardware optimization. Leads product development and ensures cutting-edge storage solutions.
+                        </p>
+                        <div style="display: flex; justify-content: center; gap: 15px;">
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3: Syeda Hooria Batool -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div style="background: var(--bg-panel); border: 1px solid rgba(255, 77, 77, 0.15); border-radius: 18px; padding: 30px; text-align: center; transition: all 0.4s ease; height: 100%;" class="team-card" onmouseover="this.style.borderColor='var(--primary-red)'; this.style.boxShadow='0 25px 50px rgba(255, 77, 77, 0.15)';" onmouseout="this.style.borderColor='rgba(255, 77, 77, 0.15)'; this.style.boxShadow='none';">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-red), #ff1f1f); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);">
+                            <i class="fas fa-user-shield" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <h4 style="color: var(--text-white); font-weight: 800; margin-bottom: 8px;">Syeda Hooria Batool</h4>
+                        <p style="color: var(--primary-red); font-weight: 700; font-size: 0.95rem; margin-bottom: 15px;">COO & Operations Lead</p>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                            Operations strategist ensuring smooth supply chain and customer satisfaction. Passionate about scaling sustainable business practices.
+                        </p>
+                        <div style="display: flex; justify-content: center; gap: 15px;">
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Why Choose Us Section -->
     <section class="about-section-animate" style="padding: 60px 0; background: #0d0d0d;">
-    <div class="container">
-        <!-- Section Header -->
-        <div class="text-center mb-5">
-            <h2 style="font-size: 2.8rem; font-weight: 800;">
-                Why Experts Choose <span style="color: #ff4d4d;">OceanGate</span>
-            </h2>
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-5">
+                <h2 style="font-size: 2.8rem; font-weight: 800;">
+                    Why Experts Choose <span style="color: #ff4d4d;">OceanGate</span>
+                </h2>
+            </div>
+
+            <!-- Cards 1 -->
+            <div class="row g-4 justify-content-center">
+                <!-- Card 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="feature-card-premium h-100">
+                        <i class="fas fa-microchip mb-4" style="font-size: 45px; color: #555;"></i>
+                        <h4 class="fw-bold">Advanced Tech</h4>
+                        <p>Cutting-edge hardware for next-level storage production and reliability.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="feature-card-premium h-100">
+                        <i class="fas fa-shield-alt mb-4" style="font-size: 45px; color: #555;"></i>
+                        <h4 class="fw-bold">Secure & Reliable</h4>
+                        <p>Your data is protected with our durable hardware and encryption standards.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="feature-card-premium h-100">
+                        <i class="fas fa-globe mb-4" style="font-size: 45px; color: #555;"></i>
+                        <h4 class="fw-bold">Global Reach</h4>
+                        <p>Supplying premium storage equipment to hundreds of companies worldwide.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Cards 1 -->
-        <div class="row g-4 justify-content-center">
-            <!-- Card 1 -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="feature-card-premium h-100">
-                    <i class="fas fa-microchip mb-4" style="font-size: 45px; color: #555;"></i>
-                    <h4 class="fw-bold">Advanced Tech</h4>
-                    <p>Cutting-edge hardware for next-level storage production and reliability.</p>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="feature-card-premium h-100">
-                    <i class="fas fa-shield-alt mb-4" style="font-size: 45px; color: #555;"></i>
-                    <h4 class="fw-bold">Secure & Reliable</h4>
-                    <p>Your data is protected with our durable hardware and encryption standards.</p>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="feature-card-premium h-100">
-                    <i class="fas fa-globe mb-4" style="font-size: 45px; color: #555;"></i>
-                    <h4 class="fw-bold">Global Reach</h4>
-                    <p>Supplying premium storage equipment to hundreds of companies worldwide.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Footer -->
+    <!-- Footer and subscription -->
     <footer class="footer">
 
         <div class="email-subscription-section text-center">
             <div class="container">
-                <h2>Join our mailing list & get exclusive offers and updates</h2>
-                <form class="email-form">
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="far fa-envelope"></i></span>
-                        <input type="email" class="form-control" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-red">Submit Now</button>
+                <div class="email-subscribe-card mx-auto p-4 p-lg-5" data-aos="fade-up">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-12 col-lg-6 text-lg-start" data-aos="fade-right">
+                            <p class="email-subtitle">STAY UPDATED</p>
+                            <h2>Get exclusive storage offers and launch alerts</h2>
+                            <p class="email-subtext">Subscribe for premium product updates, business discounts, and fast delivery notifications.</p>
+                        </div>
+                        <div class="col-12 col-lg-6" data-aos="fade-left">
+                            <form class="email-form d-flex flex-column flex-sm-row gap-3 align-items-center" action="#" method="post">
+                                <input type="email" class="form-control email-input" placeholder="Enter your email" required>
+                                <button type="submit" class="btn btn-red email-submit-btn">Subscribe Now</button>
+                            </form>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a href="#" class="footer-logo">OCEANGATE</a>
+                    <a href="./index.html" class="footer-logo">OCEANGATE</a>
                     <p class="pe-lg-5" style="color: var(--text-gray); font-size: 0.9rem;">
                         Providing state-of-the-art machinery for production of storage devices from floppy disks to
                         optical storage.
@@ -361,29 +372,29 @@
 
                 <div class="col-6 col-md-3 col-lg-2">
                     <h5>Useful Links</h5>
-                    <a href="#" class="footer-link">Home</a>
-                    <a href="#" class="footer-link">About</a>
-                    <a href="#" class="footer-link">Blog</a>
-                    <a href="#" class="footer-link">Shop</a>
-                    <a href="#" class="footer-link">Contact</a>
+                    <a href="./index.html" class="footer-link">Home</a>
+                    <a href="./about.html" class="footer-link">About</a>
+                    <a href="./blog.html" class="footer-link">Blog</a>
+                    <a href="./shop.html" class="footer-link">Shop</a>
+                    <a href="./contact.html" class="footer-link">Contact</a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-2">
                     <h5>Quick Links</h5>
-                    <a href="#" class="footer-link">About Us</a>
-                    <a href="#" class="footer-link">FAQ</a>
-                    <a href="#" class="footer-link">Shop</a>
-                    <a href="#" class="footer-link">Log-In</a>
-                    <a href="#" class="footer-link">Licensing</a>
+                    <a href="./about.html" class="footer-link">About Us</a>
+                    <a href="./contact.html" class="footer-link">FAQ</a>
+                    <a href="./shop.html" class="footer-link">Shop</a>
+                    <a href="./contact.html" class="footer-link">Log-In</a>
+                    <a href="./contact.html" class="footer-link">Licensing</a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
                     <h5>Extra Links</h5>
-                    <a href="#" class="footer-link">Home-2</a>
-                    <a href="#" class="footer-link">Home-3</a>
-                    <a href="#" class="footer-link">About-2</a>
-                    <a href="#" class="footer-link">About-3</a>
-                    <a href="#" class="footer-link">Blog-2</a>
+                    <a href="./index.html" class="footer-link">Home-2</a>
+                    <a href="./index.html" class="footer-link">Home-3</a>
+                    <a href="./about.html" class="footer-link">About-2</a>
+                    <a href="./about.html" class="footer-link">About-3</a>
+                    <a href="./blog.html" class="footer-link">Blog-2</a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
@@ -418,13 +429,16 @@
                     entry.target.classList.add('active');
                 }
             });
-        }, { threshold: 0.1 });
+        }, {
+            threshold: 0.1
+        });
 
-        
+
         document.querySelectorAll('.about-section-animate').forEach(el => {
             scrollObserver.observe(el);
         });
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
 </body>
 

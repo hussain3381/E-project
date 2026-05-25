@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,163 +7,369 @@
     <title>OceanGate | Premium Storage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./styleSheets/style.css">
 </head>
 
 <body>
-
+    <!-- Header navigation and mobile menu -->
     <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
-            <a href="#" class="logo">OCEANGATE</a>
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
+                    alt="OceanGate Logo"></a>
 
             <nav class="desktop-nav d-none d-lg-flex">
                 <div class="nav-item-wrapper">
-                    <a href="index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="index.html" style='color:black;'><span>--</span> Home 1</a>
-                        <a href="index.html"><span>--</span> Home 2</a>
+                        <a href="./index.html" style="color:black;"><span>--</span> Home 1</a>
+                        <a href="./index.html"><span>--</span> Home 2</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="About.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./about.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Our journey</a>
+                        <a href="./about.html"><span>--</span> Our journey</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Products</a>
+                        <a href="./shop.html"><span>--</span> Products</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./blog.html" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Latest News</a>
+                        <a href="./blog.html"><span>--</span> Latest News</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./contact.html" class="nav-link">Contact<span><i
+                                class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Get in Touch</a>
+                        <a href="./contact.html"><span>--</span> Get in Touch</a>
                     </div>
                 </div>
             </nav>
 
-            <div class="header-actions d-flex align-items-center">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="far fa-user"></i></a>
-                <div class="cart-icon">
-                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                    <span class="cart-badge">1</span>
+           <div class="header-actions d-flex align-items-center">
+                <div class="search-wrapper me-3">
+                    <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
+                    <div class="search-expand" aria-hidden="true">
+                        <input id="globalSearchInput" class="search-input" type="text" placeholder="Search products, e.g. Kingston SSD" autocomplete="off">
+                        <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
+                    </div>
                 </div>
-                <button class="menu-btn d-lg-none" id="menuBtn">
-                    <span></span><span></span><span></span>
-                </button>
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <div class="cart-icon"><a href="./shop.html" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
+                <button class="menu-btn d-lg-none" id="menuBtn"><span></span><span></span><span></span></button>
             </div>
         </div>
 
         <div class="mobile-menu" id="mobileMenu">
             <nav class="mobile-nav">
                 <div class="nav-item-wrapper2">
-                    <a href="index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box-mobile">
-                        <a href="index.html"><span>--</span> Home 1</a>
-                        <a href="index.html"><span>--</span> Home 2</a>
+                        <a href="./index.html"><span>--</span> Home 1</a>
+                        <a href="./index.html"><span>--</span> Home 2</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
-                    <a href="About.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./about.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box-mobile">
-                        <a href=""><span>--</span> Our journey</a>
+                        <a href="./about.html"><span>--</span> Our journey</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Products</a>
+                        <a href="./shop.html"><span>--</span> Products</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./blog.html" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Latest News</a>
+                        <a href="./blog.html"><span>--</span> Latest News</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./contact.html" class="nav-link">Contact<span><i
+                                class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Get in Touch</a>
+                        <a href="./contact.html"><span>--</span> Get in Touch</a>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <main
-        style="min-height: 80vh; display: flex; align-items: center; justify-content: center; background: url('https://gadgetz.webflow.io/images/hero-grid.svg') no-repeat center center / cover;">
-        <div class="text-center">
-            <p class="small-caps" style="color:var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">
-                Premium Storage Peripherals</p>
-            <h1 class="hero-title" style="font-size: 3.5rem; font-weight: 800; color: #fff; margin: 20px 0;">Innovating
-                <span style="color: var(--primary-red);">Data Storage</span> Since 3 Years
-            </h1>
-            <a href="#products" class="btn btn-red">Discover Solutions</a>
-        </div>
+    <!-- Main landing content -->
+    <main>
+        <section class="hero-section">
+            <div class="hero-visual"></div>
+            <div class="hero-frame"></div>
+            <div class="container hero-content" data-aos="fade-up">
+                <p class="small-caps">Premium Storage Peripherals</p>
+                <h1 class="hero-title">Elevate Your <span>Data Story</span> with Ultra-Fast Storage</h1>
+                <p class="hero-copy">OceanGate blends archival optical media with high-performance SSD technology to
+                    deliver storage solutions that feel modern, premium, and endlessly reliable.</p>
+                <div class="hero-actions">
+                    <a href="shop.html" class="btn btn-red">Shop Premium Drives</a>
+                    <a href="comparison.html" class="btn btn-secondary">Compare Models</a>
+                </div>
+                <a href="#techMatrix" class="hero-scroll">
+                    <span class="scroll-icon"><i class="fas fa-arrow-down"></i></span>
+                    Scroll to explore
+                </a>
+            </div>
+        </section>
+
+        <!-- Feature highlights section -->
+        <section class="features-showcase section-panel" style="padding: 80px 0;">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <p class="section-subtitle">Why Choose Us</p>
+                    <h2 class="section-title">Premium Storage Solutions</h2>
+                </div>
+                <div class="row g-4">
+                    <!-- Feature: Lightning Fast -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-card text-center">
+                            <i class="fas fa-bolt"
+                                style="font-size: 2.4rem; color: var(--primary-red); margin-bottom: 22px;"></i>
+                            <h4>Lightning Fast</h4>
+                            <p style="color: var(--text-gray);">Read/write speeds up to 52X for optical media and 570
+                                MB/s for SSDs.</p>
+                        </div>
+                    </div>
+                    <!-- Feature: Secure & Durable -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-card text-center">
+                            <i class="fas fa-shield-alt"
+                                style="font-size: 2.4rem; color: var(--primary-red); margin-bottom: 22px;"></i>
+                            <h4>Secure & Durable</h4>
+                            <p style="color: var(--text-gray);">Enterprise-grade encryption and archival longevity on
+                                every product.</p>
+                        </div>
+                    </div>
+                    <!-- Feature: Worldwide Support -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-card text-center">
+                            <i class="fas fa-globe"
+                                style="font-size: 2.4rem; color: var(--primary-red); margin-bottom: 22px;"></i>
+                            <h4>Worldwide Support</h4>
+                            <p style="color: var(--text-gray);">24/7 customer care with premium shipping coverage.</p>
+                        </div>
+                    </div>
+                    <!-- Feature: Eco Aware -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-card text-center">
+                            <i class="fas fa-leaf"
+                                style="font-size: 2.4rem; color: var(--primary-red); margin-bottom: 22px;"></i>
+                            <h4>Eco Aware</h4>
+                            <p style="color: var(--text-gray);">Recyclable packaging and sustainable manufacturing
+                                practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product comparison matrix -->
+        <section id="techMatrix" class="section-panel" style="padding: 80px 0;">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <p class="section-subtitle">Performance Matrix</p>
+                    <h2 class="section-title">Speed vs. Lifespan Comparison</h2>
+                </div>
+                <div class="table-responsive" data-aos="fade-up" data-aos-delay="100">
+                    <table class="tech-matrix">
+                        <thead>
+                            <tr>
+                                <th>Storage Tier</th>
+                                <th>Primary Strength</th>
+                                <th>Typical Read Speed</th>
+                                <th>Archival Life</th>
+                                <th>Best Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong style="color: var(--text-white);">Sony CD-R</strong></td>
+                                <td>Long-term archival</td>
+                                <td><span class="tech-highlight">52X</span></td>
+                                <td>50+ years</td>
+                                <td>Audio, backups, legacy media</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color: var(--text-white);">Verbatim DVD-RW</strong></td>
+                                <td>Flexible rewrites</td>
+                                <td><span class="tech-highlight">16X</span></td>
+                                <td>50+ years</td>
+                                <td>Video archives, media updates</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color: var(--text-white);">Blu-ray BD-R</strong></td>
+                                <td>High-capacity media</td>
+                                <td><span class="tech-highlight">10X</span></td>
+                                <td>50+ years</td>
+                                <td>Large archives, premium content</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color: var(--text-white);">Kingston SSD</strong></td>
+                                <td>Maximum speed</td>
+                                <td><span class="tech-highlight">570 MB/s</span></td>
+                                <td>3-5 years*</td>
+                                <td>Gaming, workstation, daily work</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer testimonials section -->
+        <section class="section-panel"
+            style="padding: 80px 0; background: linear-gradient(180deg, rgba(3, 4, 6, 0.98), rgba(5, 5, 7, 0.98));">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <p class="section-subtitle">Customer Trust</p>
+                    <h2 class="section-title">Review Highlights</h2>
+                </div>
+                <div class="review-carousel row g-4">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="review-card">
+                            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><span>5.0</span></div>
+                            <p style="color: var(--text-white); font-size: 1rem; line-height: 1.8;">"OceanGate helped us
+                                archive critical media with confidence. The contrast between lasting optical media and
+                                premium SSD options is exactly what our team needed."</p>
+                            <div class="review-meta">
+                                <span class="trust-badge"><i class="fas fa-globe"></i> Karachi</span>
+                                <span class="review-location">Regional Distribution Partner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="review-card">
+                            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><span>4.9</span></div>
+                            <p style="color: var(--text-white); font-size: 1rem; line-height: 1.8;">"The cart preview
+                                and checkout flow are crisp, fast, and easy to use. The curved interface gives the site
+                                an elevated marketplace feel."</p>
+                            <div class="review-meta">
+                                <span class="trust-badge"><i class="fas fa-user-check"></i> Lahore</span>
+                                <span class="review-location">Local Tech Retailer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partner logos and brand trust section -->
+        <section class="section-panel brand-partners" style="padding: 80px 0;">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <p class="section-subtitle">Trusted By</p>
+                    <h2 class="section-title">Industry Leading Partners</h2>
+                </div>
+                <div class="row g-4 align-items-center">
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="feature-card text-center" style="height: 140px;">
+                            <p style="color: var(--text-muted); font-weight: 700; margin: 0;">Sony</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="feature-card text-center" style="height: 140px;">
+                            <p style="color: var(--text-muted); font-weight: 700; margin: 0;">Samsung</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="feature-card text-center" style="height: 140px;">
+                            <p style="color: var(--text-muted); font-weight: 700; margin: 0;">Kingston</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+                        <div class="feature-card text-center" style="height: 140px;">
+                            <p style="color: var(--text-muted); font-weight: 700; margin: 0;">Verbatim</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="feature-card text-center" style="height: 140px;">
+                            <p style="color: var(--text-muted); font-weight: 700; margin: 0;">Seagate</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="350">
+                        <div class="feature-card text-center" style="height: 140px;">
+                            <p style="color: var(--text-muted); font-weight: 700; margin: 0;">Intel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Site footer and subscription section -->
     <footer class="footer">
-
         <div class="email-subscription-section text-center">
             <div class="container">
-                <h2>Join our mailing list & get exclusive offers and updates</h2>
-                <form class="email-form">
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="far fa-envelope"></i></span>
-                        <input type="email" class="form-control" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-red">Submit Now</button>
+                <div class="email-subscribe-card mx-auto p-4 p-lg-5" data-aos="fade-up">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-12 col-lg-6 text-lg-start" data-aos="fade-right">
+                            <p class="email-subtitle">STAY UPDATED</p>
+                            <h2>Get exclusive storage offers and launch alerts</h2>
+                            <p class="email-subtext">Subscribe for premium product updates, business discounts, and fast
+                                delivery notifications.</p>
+                        </div>
+                        <div class="col-12 col-lg-6" data-aos="fade-left">
+                            <form class="email-form d-flex flex-column flex-sm-row gap-3 align-items-center" action="#"
+                                method="post">
+                                <input type="email" class="form-control email-input" placeholder="Enter your email"
+                                    required>
+                                <button type="submit" class="btn btn-red email-submit-btn">Subscribe Now</button>
+                            </form>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a href="#" class="footer-logo">OCEANGATE</a>
-                    <p class="pe-lg-5" style="color: var(--text-gray); font-size: 0.9rem;">
-                        Providing state-of-the-art machinery for production of storage devices from floppy disks to
-                        optical storage.
-                    </p>
+                    <a href="index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
+                            alt="OceanGate Logo"></a>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Providing state-of-the-art machinery for
+                        production of storage devices from floppy disks to optical storage.</p>
                 </div>
-
                 <div class="col-6 col-md-3 col-lg-2">
                     <h5>Useful Links</h5>
-                    <a href="#" class="footer-link">Home</a>
-                    <a href="#" class="footer-link">About</a>
-                    <a href="#" class="footer-link">Blog</a>
-                    <a href="#" class="footer-link">Shop</a>
-                    <a href="#" class="footer-link">Contact</a>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="shop.html" class="footer-link">Shop</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
                 </div>
-
                 <div class="col-6 col-md-3 col-lg-2">
                     <h5>Quick Links</h5>
-                    <a href="#" class="footer-link">About Us</a>
-                    <a href="#" class="footer-link">FAQ</a>
-                    <a href="#" class="footer-link">Shop</a>
-                    <a href="#" class="footer-link">Log-In</a>
-                    <a href="#" class="footer-link">Licensing</a>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="contact.html" class="footer-link">FAQ</a>
+                    <a href="shop.html" class="footer-link">Shop</a>
+                    <a href="contact.html" class="footer-link">Log-In</a>
+                    <a href="contact.html" class="footer-link">Licensing</a>
                 </div>
-
                 <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
                     <h5>Extra Links</h5>
-                    <a href="#" class="footer-link">Home-2</a>
-                    <a href="#" class="footer-link">Home-3</a>
-                    <a href="#" class="footer-link">About-2</a>
-                    <a href="#" class="footer-link">About-3</a>
-                    <a href="#" class="footer-link">Blog-2</a>
+                    <a href="index.html" class="footer-link">Home-2</a>
+                    <a href="index.html" class="footer-link">Home-3</a>
+                    <a href="about.html" class="footer-link">About-2</a>
+                    <a href="about.html" class="footer-link">About-3</a>
+                    <a href="blog.html" class="footer-link">Blog-2</a>
                 </div>
-
                 <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
                     <h5>Get in Touch</h5>
                     <p style="color: var(--text-gray); font-size: 0.9rem;">Karachi, Pakistan</p>
@@ -175,7 +381,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="copyright-section text-center">
                 <p>© 2026 OceanGate Limited. All rights reserved.</p>
                 <div class="social-icons mobile-social d-sm-none">
@@ -185,10 +390,11 @@
                 </div>
             </div>
         </div>
+        <!-- Footer and subscription -->
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
-    
 </body>
 
 </html>

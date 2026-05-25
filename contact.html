@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanGate | Premium Storage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styleSheets/contact.css">
+    <link rel="stylesheet" href="./styleSheets/style.css">
+</head>
+
+<body>
+
+    <!-- Header navigation -->
+    <header class="header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png" alt="OceanGate Logo"></a>
+
+            <nav class="desktop-nav d-none d-lg-flex">
+                <div class="nav-item-wrapper">
+                    <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./index.html" style="color:black;"><span>--</span> Home 1</a>
+                        <a href="./index.html"><span>--</span> Home 2</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./about.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./about.html"><span>--</span> Our journey</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./shop.html"><span>--</span> Products</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./blog.html" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./blog.html"><span>--</span> Latest News</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./contact.html" class="nav-link">Contact<span><i
+                                class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./contact.html"><span>--</span> Get in Touch</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-actions d-flex align-items-center">
+                <div class="search-wrapper me-3">
+                    <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
+                    <div class="search-expand" aria-hidden="true">
+                        <input id="globalSearchInput" class="search-input" type="text" placeholder="Search products, e.g. Kingston SSD" autocomplete="off">
+                        <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <div class="cart-icon">
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <span class="cart-badge" id="cartCount">1</span>
+                </div>
+                <button class="menu-btn d-lg-none" id="menuBtn">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="shop.html">Shop</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contactSection" class="newsletter-contact-section" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
+
+        <div class="newsletter-contact-container">
+
+            <!-- Contact Heading -->
+            <div class="contact-page-header" data-aos="fade-down" data-aos-duration="900">
+                <span class="section-tag">Business Storage Inquiry</span>
+                <p class="contact-page-subtitle">GET IN TOUCH</p>
+
+                <h2 class="contact-page-title">
+                    Contact OceanGate
+                </h2>
+
+                <p class="contact-page-text">
+                    Have questions about our SSDs, HDDs, USB drives, or storage
+                    solutions? Send us your inquiry and our team will get back to you.
+                </p>
+            </div>
+
+            <!-- Contact Content -->
+            <div class="contact-page-content">
+
+                <!-- Left Side: Contact Form -->
+                <div class="contact-form-box" data-aos="fade-right" data-aos-duration="900">
+
+                    <h3>Send Your Inquiry</h3>
+
+                    <form id="contactForm" class="contact-form row gx-4 gy-3" action="#" method="post">
+                        <div class="col-12 col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="text" name="productInquiry" class="form-control" placeholder="Product Inquiry"
+                                required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input type="text" name="company" class="form-control" placeholder="Company Name" required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select name="country" class="form-select" required>
+                                <option value="">Select Country</option>
+                                <option>Pakistan</option>
+                                <option>United States</option>
+                                <option>United Kingdom</option>
+                                <option>Canada</option>
+                                <option>Australia</option>
+                                <option>Germany</option>
+                                <option>United Arab Emirates</option>
+                                <option>Saudi Arabia</option>
+                                <option>India</option>
+                                <option>China</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input type="tel" name="phone" class="form-control" placeholder="Phone Number">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select name="helpType" class="form-select" required>
+                                <option value="">How Can Our Sales Team Help You?</option>
+                                <option>Product Recommendation</option>
+                                <option>Bulk Purchase Inquiry</option>
+                                <option>Wholesale Pricing</option>
+                                <option>Corporate Solutions</option>
+                                <option>Warranty Support</option>
+                                <option>Technical Consultation</option>
+                                <option>Order Tracking</option>
+                                <option>Partnership Opportunities</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select name="productInterest" class="form-select" required>
+                                <option value="">Primary Product of Interest</option>
+                                <option>Internal SSD</option>
+                                <option>External SSD</option>
+                                <option>Internal HDD</option>
+                                <option>External HDD</option>
+                                <option>USB Flash Drive</option>
+                                <option>Memory Card</option>
+                                <option>NVMe SSD</option>
+                                <option>SATA SSD</option>
+                                <option>Storage Accessories</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input type="number" name="quantity" class="form-control" placeholder="Quantity Required">
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" class="form-control" rows="6"
+                                placeholder="Tell us about your storage requirements..." required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="contact-submit-btn btn btn-red">Send Inquiry</button>
+                        </div>
+                        <div class="col-12">
+                            <div class="contact-highlight">
+                                <strong>Need a fast quote?</strong> Share your product needs and quantity, and our team
+                                will reply with a tailored response within one business day.
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="contact-extra-section" data-aos="fade-up" data-aos-duration="900">
+
+                        <h2>Contact Our Sales Team</h2>
+
+                        <p>
+                            Learn how OceanGate can help your business with premium SSDs,
+                            HDDs, USB drives, and high-performance storage solutions.
+                        </p>
+
+                        <p>When connecting with our team, you can expect us to:</p>
+
+                        <ul class="contact-benefits-list">
+                            <li>Understand your current storage requirements</li>
+                            <li>Recommend the best products for your needs</li>
+                            <li>Discuss pricing and bulk order options</li>
+                            <li>Answer all technical and product-related questions</li>
+                        </ul>
+
+                        <p><strong>Looking for immediate support?</strong></p>
+                        <p>📞 For sales, call +92 300 1234567</p>
+                        <p>✉️ For technical help, email support@oceangate.com</p>
+
+                        <div class="trusted-brands">
+                            <h3>Trusted Storage Brands</h3>
+
+                            <div class="brand-logos">
+                                <span>💾 Samsung</span>
+                                <span>⚡ Kingston</span>
+                                <span>🖴 Western Digital</span>
+                                <span>🚀 SanDisk</span>
+                                <span>💿 Seagate</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Right Side: Contact Info -->
+                <div class="contact-info-box" data-aos="fade-left" data-aos-duration="900">
+
+                    <h3>Contact Information</h3>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-location-dot"></i>
+                        <div>
+                            <h4>Head Office</h4>
+                            <p>Karachi, Pakistan</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>sales@oceangate.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+92 300 1234567</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-hard-drive"></i>
+                        <div>
+                            <h4>Products</h4>
+                            <p>SSD, HDD, USB Drives & Accessories</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Extra Content for Contact Information Box -->
+                    <div class="contact-info-extra">
+
+                        <h3>Why Businesses Choose OceanGate</h3>
+
+                        <p>
+                            OceanGate delivers premium storage solutions for businesses,
+                            retailers, and enterprise clients worldwide. We provide reliable
+                            products, expert guidance, and competitive pricing.
+                        </p>
+
+                        <ul class="contact-benefits-list">
+                            <li>100% Genuine Products</li>
+                            <li>Official Manufacturer Warranty</li>
+                            <li>Bulk & Wholesale Pricing</li>
+                            <li>Fast Nationwide Delivery</li>
+                            <li>Dedicated Technical Support</li>
+                        </ul>
+
+                        <h3>Trusted by Professionals</h3>
+
+                        <p>
+                            Our products are used by system builders, IT companies,
+                            resellers, and corporate clients who demand high performance
+                            and long-term reliability.
+                        </p>
+
+                        <!-- Brand Logos -->
+                        <div class="trusted-brands">
+                            <h4>Top Storage Brands</h4>
+
+                            <div class="brand-logos">
+                                <span>💾 Samsung</span>
+                                <span>⚡ Kingston</span>
+                                <span>🖴 WD</span>
+                                <span>🚀 SanDisk</span>
+                                <span>💿 Seagate</span>
+                                <span>🔥 Crucial</span>
+                            </div>
+                        </div>
+
+                        <!-- Statistics -->
+                        <div class="contact-stats">
+                            <div class="stat-box">
+                                <h4>5000+</h4>
+                                <p>Products Delivered</p>
+                            </div>
+
+                            <div class="stat-box">
+                                <h4>1000+</h4>
+                                <p>Business Clients</p>
+                            </div>
+
+                            <div class="stat-box">
+                                <h4>24/7</h4>
+                                <p>Support Available</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer and subscription -->
+    <footer class="footer">
+
+        <div class="email-subscription-section text-center">
+            <div class="container">
+                <div class="email-subscribe-card mx-auto p-4 p-lg-5" data-aos="zoom-in">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-12 col-lg-6 text-lg-start">
+                            <p class="email-subtitle">STAY UPDATED</p>
+                            <h2>Get exclusive storage offers and launch alerts</h2>
+                            <p class="email-subtext">Subscribe for premium product updates, business discounts, and fast
+                                delivery notifications.</p>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <form class="email-form d-flex flex-column flex-sm-row gap-3 align-items-center" action="#"
+                                method="post">
+                                <input type="email" class="form-control email-input" placeholder="Enter your email"
+                                    required>
+                                <button type="submit" class="btn btn-red email-submit-btn">Subscribe Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row pt-5 pb-5">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a href="index.html" class="footer-logo">OCEANGATE</a>
+                    <p class="pe-lg-5" style="color: var(--text-gray); font-size: 0.9rem;">
+                        Providing state-of-the-art machinery for production of storage devices from floppy disks to
+                        optical storage.
+                    </p>
+                </div>
+
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5>Useful Links</h5>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="shop.html" class="footer-link">Shop</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5>Quick Links</h5>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="contact.html" class="footer-link">FAQ</a>
+                    <a href="shop.html" class="footer-link">Shop</a>
+                    <a href="contact.html" class="footer-link">Log-In</a>
+                    <a href="contact.html" class="footer-link">Licensing</a>
+                </div>
+
+                <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
+                    <h5>Extra Links</h5>
+                    <a href="index.html" class="footer-link">Home-2</a>
+                    <a href="index.html" class="footer-link">Home-3</a>
+                    <a href="about.html" class="footer-link">About-2</a>
+                    <a href="about.html" class="footer-link">About-3</a>
+                    <a href="blog.html" class="footer-link">Blog-2</a>
+                </div>
+
+                <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
+                    <h5>Get in Touch</h5>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Karachi, Pakistan</p>
+                    <a href="mailto:support@oceangate.com" class="footer-link">support@oceangate.com</a>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright-section text-center">
+                <p>© 2026 OceanGate Limited. All rights reserved.</p>
+                <div class="social-icons mobile-social d-sm-none">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>
