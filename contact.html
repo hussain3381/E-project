@@ -14,52 +14,58 @@
 
 <body>
 
+    <!-- Header navigation -->
     <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
-            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
-                    alt="OceanGate Logo"></a>
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png" alt="OceanGate Logo"></a>
 
             <nav class="desktop-nav d-none d-lg-flex">
                 <div class="nav-item-wrapper">
-                    <a href="index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="index.html" style='color:black;'><span>--</span> Home 1</a>
-                        <a href="index.html"><span>--</span> Home 2</a>
+                        <a href="./index.html" style="color:black;"><span>--</span> Home 1</a>
+                        <a href="./index.html"><span>--</span> Home 2</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="About.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./about.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Our journey</a>
+                        <a href="./about.html"><span>--</span> Our journey</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Products</a>
+                        <a href="./shop.html"><span>--</span> Products</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./blog.html" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Latest News</a>
+                        <a href="./blog.html"><span>--</span> Latest News</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
                     <a href="./contact.html" class="nav-link">Contact<span><i
                                 class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
-                        <a href="#"><span>--</span> Get in Touch</a>
+                        <a href="./contact.html"><span>--</span> Get in Touch</a>
                     </div>
                 </div>
             </nav>
 
             <div class="header-actions d-flex align-items-center">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="far fa-user"></i></a>
+                <div class="search-wrapper me-3">
+                    <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
+                    <div class="search-expand" aria-hidden="true">
+                        <input id="globalSearchInput" class="search-input" type="text" placeholder="Search products, e.g. Kingston SSD" autocomplete="off">
+                        <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
                 <div class="cart-icon">
                     <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                    <span class="cart-badge">1</span>
+                    <span class="cart-badge" id="cartCount">1</span>
                 </div>
                 <button class="menu-btn d-lg-none" id="menuBtn">
                     <span></span><span></span><span></span>
@@ -69,38 +75,11 @@
 
         <div class="mobile-menu" id="mobileMenu">
             <nav class="mobile-nav">
-                <div class="nav-item-wrapper2">
-                    <a href="index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="index.html"><span>--</span> Home 1</a>
-                        <a href="index.html"><span>--</span> Home 2</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="About.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href=""><span>--</span> Our journey</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Products</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="#" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Latest News</a>
-                    </div>
-                </div>
-                <div class="nav-item-wrapper2">
-                    <a href="./contact.html" class="nav-link">Contact<span><i
-                                class="fas fa-chevron-down"></i></span></a>
-                    <div class="dropdown-box-mobile">
-                        <a href="#"><span>--</span> Get in Touch</a>
-                    </div>
-                </div>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="shop.html">Shop</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
@@ -370,11 +349,12 @@
 
 
 
+    <!-- Footer and subscription -->
     <footer class="footer">
 
         <div class="email-subscription-section text-center">
             <div class="container">
-                <div class="email-subscribe-card rounded-5 mx-auto p-4 p-lg-5" data-aos="zoom-in">
+                <div class="email-subscribe-card mx-auto p-4 p-lg-5" data-aos="zoom-in">
                     <div class="row align-items-center gy-4">
                         <div class="col-12 col-lg-6 text-lg-start">
                             <p class="email-subtitle">STAY UPDATED</p>
@@ -398,7 +378,7 @@
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a href="#" class="footer-logo">OCEANGATE</a>
+                    <a href="index.html" class="footer-logo">OCEANGATE</a>
                     <p class="pe-lg-5" style="color: var(--text-gray); font-size: 0.9rem;">
                         Providing state-of-the-art machinery for production of storage devices from floppy disks to
                         optical storage.
@@ -407,29 +387,29 @@
 
                 <div class="col-6 col-md-3 col-lg-2">
                     <h5>Useful Links</h5>
-                    <a href="#" class="footer-link">Home</a>
-                    <a href="#" class="footer-link">About</a>
-                    <a href="#" class="footer-link">Blog</a>
-                    <a href="#" class="footer-link">Shop</a>
-                    <a href="#" class="footer-link">Contact</a>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="shop.html" class="footer-link">Shop</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-2">
                     <h5>Quick Links</h5>
-                    <a href="#" class="footer-link">About Us</a>
-                    <a href="#" class="footer-link">FAQ</a>
-                    <a href="#" class="footer-link">Shop</a>
-                    <a href="#" class="footer-link">Log-In</a>
-                    <a href="#" class="footer-link">Licensing</a>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="contact.html" class="footer-link">FAQ</a>
+                    <a href="shop.html" class="footer-link">Shop</a>
+                    <a href="contact.html" class="footer-link">Log-In</a>
+                    <a href="contact.html" class="footer-link">Licensing</a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
                     <h5>Extra Links</h5>
-                    <a href="#" class="footer-link">Home-2</a>
-                    <a href="#" class="footer-link">Home-3</a>
-                    <a href="#" class="footer-link">About-2</a>
-                    <a href="#" class="footer-link">About-3</a>
-                    <a href="#" class="footer-link">Blog-2</a>
+                    <a href="index.html" class="footer-link">Home-2</a>
+                    <a href="index.html" class="footer-link">Home-3</a>
+                    <a href="about.html" class="footer-link">About-2</a>
+                    <a href="about.html" class="footer-link">About-3</a>
+                    <a href="blog.html" class="footer-link">Blog-2</a>
                 </div>
 
                 <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">

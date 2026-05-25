@@ -1,0 +1,16 @@
+<svg width="320" height="130" viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
+  <path d="M40 32 Q95 7 150 32 T260 32" fill="none" stroke="#e62129" stroke-width="6" stroke-linecap="round" />
+  <path d="M50 47 Q105 22 160 47 T270 47" fill="none" stroke="#1f242e" stroke-width="6" stroke-linecap="round" />
+  
+  <g transform="translate(62, 90)">
+    <circle cx="0" cy="0" r="21" fill="#f7f7f7" />
+    <circle cx="0" cy="0" r="19" fill="#11141a" stroke="#f7f7f7" stroke-width="1.5"/>
+    <path d="M-13 -13 L14 14 M-13 14 L14 -13" stroke="#f7f7f7" stroke-width="3" />
+    <circle cx="0" cy="0" r="6" fill="#e62129" />
+    <circle cx="0" cy="0" r="2" fill="#f7f7f7" />
+  </g>
+
+  <text x="85" y="106" font-family="'Lexend', Arial, sans-serif" font-size="50" font-weight="bold" fill="#f7f7f7">
+    cean<tspan fill="#e62129">G</tspan>ate
+  </text>
+</svg>
