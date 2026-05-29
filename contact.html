@@ -37,6 +37,7 @@
                     <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="./shop.html"><span>--</span> Products</a>
+                        <a href="./comparison.html"><span>--</span> compare devices</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
@@ -53,8 +54,9 @@
                     </div>
                 </div>
             </nav>
-
             <div class="header-actions d-flex align-items-center">
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
                 <div class="search-wrapper me-3">
                     <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
                     <div class="search-expand" aria-hidden="true">
@@ -62,23 +64,16 @@
                         <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
                     </div>
                 </div>
-                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
-                <div class="cart-icon">
-                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                    <span class="cart-badge" id="cartCount">1</span>
-                </div>
-                <button class="menu-btn d-lg-none" id="menuBtn">
-                    <span></span><span></span><span></span>
-                </button>
+                <button class="menu-btn d-lg-none" id="menuBtn"><span></span><span></span><span></span></button>
             </div>
         </div>
-
         <div class="mobile-menu" id="mobileMenu">
             <nav class="mobile-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="shop.html">Shop</a>
                 <a href="blog.html">Blog</a>
+                <a href="shop.html">Shop</a>
+                <a href="comparison.html">Compare</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
@@ -437,6 +432,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/auth.js"></script>
 
 </body>
 

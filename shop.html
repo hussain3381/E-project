@@ -16,7 +16,8 @@
     <!-- Header navigation -->
     <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
-            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.svg" alt="OceanGate Logo"></a>
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
+  alt="OceanGate Logo"></a>
             <nav class="desktop-nav d-none d-lg-flex">
                 <div class="nav-item-wrapper">
                     <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
@@ -32,9 +33,10 @@
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./comparison.html" class="nav-link">Comparison<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="./shop.html"><span>--</span> Products</a>
+                        <a href="./comparison.html"><span>--</span> compare devices</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
@@ -52,6 +54,8 @@
                 </div>
             </nav>
             <div class="header-actions d-flex align-items-center">
+                <a href="./login.html" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
                 <div class="search-wrapper me-3">
                     <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
                     <div class="search-expand" aria-hidden="true">
@@ -59,8 +63,6 @@
                         <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
                     </div>
                 </div>
-                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
-                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
                 <button class="menu-btn d-lg-none" id="menuBtn"><span></span><span></span><span></span></button>
             </div>
         </div>
@@ -71,6 +73,8 @@
                 <a href="shop.html">Shop</a>
                 <a href="comparison.html">Compare</a>
                 <a href="contact.html">Contact</a>
+                <a href="login.html">Sign In</a>
+                <a href="signup.html">Sign Up</a>
             </nav>
         </div>
     </header>
@@ -129,41 +133,43 @@
                         <details class="filter-panel" open>
                             <summary>Brand</summary>
                             <div class="filter-options">
-                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="sony">Sony</label>
-                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="samsung">Samsung</label>
-                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="kingston">Kingston</label>
-                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="verbatim">Verbatim</label>
-                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="seagate">Seagate</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="Sony">Sony</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="Samsung">Samsung</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="Kingston">Kingston</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="Verbatim">Verbatim</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="SanDisk">SanDisk</label>
                             </div>
                         </details>
 
                         <details class="filter-panel" open>
                             <summary>Category</summary>
                             <div class="filter-options">
-                                <label class="filter-option"><input type="checkbox" class="category-filter" value="cd-r">CD-R</label>
-                                <label class="filter-option"><input type="checkbox" class="category-filter" value="dvd-rw">DVD-RW</label>
-                                <label class="filter-option"><input type="checkbox" class="category-filter" value="blu-ray">Blu-ray</label>
-                                <label class="filter-option"><input type="checkbox" class="category-filter" value="ssd">SSD</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="CD">CD</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="DVD">DVD</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="Blu-ray">Blu-ray</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="SSD">SSD</label>
                             </div>
                         </details>
 
                         <details class="filter-panel" open>
                             <summary>Speed</summary>
                             <div class="filter-options">
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="10">10X</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="16">16X</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="52">52X</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="150">150 MB/s</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="550">550 MB/s</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="570">570 MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="10X">10X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="16X">16X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="24X">24X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="52X">52X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="500MB/s">500MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="520MB/s">520MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="560MB/s">560MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="7000MB/s">7000MB/s</label>
                             </div>
                         </details>
 
                         <details class="filter-panel" open>
                             <summary>Price Range</summary>
                             <div class="filter-options">
-                                <span class="filter-range-label">Max Price: $<span id="priceValue">200</span></span>
-                                <input type="range" class="form-range price-filter" id="priceRange" min="0" max="200" value="200" onchange="filterProducts()">
+                                <span class="filter-range-label">Max Price: Rs. <span id="priceValue">25000</span></span>
+                                <input type="range" class="form-range price-filter" id="priceRange" min="0" max="25000" value="25000" onchange="filterProducts()">
                             </div>
                         </details>
                     </div>
@@ -281,6 +287,7 @@
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/auth.js"></script>
 </body>
 
 </html>
