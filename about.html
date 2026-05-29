@@ -36,6 +36,7 @@
                     <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="./shop.html"><span>--</span> Products</a>
+                        <a href="./comparison.html"><span>--</span> compare devices</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
@@ -52,8 +53,9 @@
                     </div>
                 </div>
             </nav>
-
             <div class="header-actions d-flex align-items-center">
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
                 <div class="search-wrapper me-3">
                     <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
                     <div class="search-expand" aria-hidden="true">
@@ -61,24 +63,17 @@
                         <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
                     </div>
                 </div>
-                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
-                <div class="cart-icon">
-                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                    <span class="cart-badge" id="cartCount">1</span>
-                </div>
-                <button class="menu-btn d-lg-none" id="menuBtn">
-                    <span></span><span></span><span></span>
-                </button>
+                <button class="menu-btn d-lg-none" id="menuBtn"><span></span><span></span><span></span></button>
             </div>
         </div>
-
         <div class="mobile-menu" id="mobileMenu">
             <nav class="mobile-nav">
-                <a href="./index.html">Home</a>
-                <a href="./about.html">About</a>
-                <a href="./shop.html">Shop</a>
-                <a href="./blog.html">Blog</a>
-                <a href="./contact.html">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="shop.html">Shop</a>
+                <a href="comparison.html">Compare</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
@@ -232,7 +227,7 @@
                         <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-red), #ff1f1f); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);">
                             <i class="fas fa-user-tie" style="font-size: 3rem; color: white;"></i>
                         </div>
-                        <h4 style="color: var(--text-white); font-weight: 800; margin-bottom: 8px;">Hussain</h4>
+                        <h4 style="color: var(--text-white); font-weight: 800; margin-bottom: 8px;">Hussain Boholem's</h4>
                         <p style="color: var(--primary-red); font-weight: 700; font-size: 0.95rem; margin-bottom: 15px;">Founder & CEO</p>
                         <p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
                             Visionary leader with 8+ years in storage technology. Pioneered OceanGate's mission to make premium storage accessible globally.
@@ -241,20 +236,20 @@
                             <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
                                 <i class="fab fa-linkedin"></i>
                             </a>
-                            <a href="#" style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
-                                <i class="fab fa-twitter"></i>
+                            <a href="https://github.com/hussain3381" method='post' style="color: var(--primary-red); font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';">
+                                <i class="fab fa-github"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Team Member 2: Esha Eman -->
+                <!-- Team Member 2: Esha -->
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div style="background: var(--bg-panel); border: 1px solid rgba(255, 77, 77, 0.15); border-radius: 18px; padding: 30px; text-align: center; transition: all 0.4s ease; height: 100%;" class="team-card" onmouseover="this.style.borderColor='var(--primary-red)'; this.style.boxShadow='0 25px 50px rgba(255, 77, 77, 0.15)';" onmouseout="this.style.borderColor='rgba(255, 77, 77, 0.15)'; this.style.boxShadow='none';">
                         <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-red), #ff1f1f); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);">
                             <i class="fas fa-user-circle" style="font-size: 3rem; color: white;"></i>
                         </div>
-                        <h4 style="color: var(--text-white); font-weight: 800; margin-bottom: 8px;">Esha Eman</h4>
+                        <h4 style="color: var(--text-white); font-weight: 800; margin-bottom: 8px;">Miss Esha</h4>
                         <p style="color: var(--primary-red); font-weight: 700; font-size: 0.95rem; margin-bottom: 15px;">CTO & Product Lead</p>
                         <p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
                             Tech innovator with expertise in hardware optimization. Leads product development and ensures cutting-edge storage solutions.
@@ -440,6 +435,7 @@
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/auth.js"></script>
 </body>
 
 </html>

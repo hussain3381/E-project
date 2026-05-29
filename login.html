@@ -1,14 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OceanGate | Compare Hardware</title>
+    <title>OceanGate | Sign In</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Global system architecture (loaded first) -->
     <link rel="stylesheet" href="./styleSheets/style.css">
+    <!-- Authentication feature extension -->
+    <link rel="stylesheet" href="./styleSheets/auth.css">
 </head>
 
 <body>
@@ -16,7 +19,8 @@
     <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
             <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
-  alt="OceanGate Logo"></a>
+                    alt="OceanGate Logo"></a>
+
             <nav class="desktop-nav d-none d-lg-flex">
                 <div class="nav-item-wrapper">
                     <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
@@ -45,8 +49,7 @@
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="./contact.html" class="nav-link">Contact<span><i
-                                class="fas fa-chevron-down"></i></span></a>
+                    <a href="./contact.html" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="./contact.html"><span>--</span> Get in Touch</a>
                     </div>
@@ -77,83 +80,99 @@
         </div>
     </header>
 
-    <section class="comparison-header">
-        <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <p style="color: var(--primary-red); text-transform: uppercase; letter-spacing: 0.35em; font-size: 0.85rem; margin-bottom: 15px;">Side-by-Side Specs</p>
-                <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--text-white); margin-bottom: 15px;">Hardware Comparison Tool</h1>
-                <p style="color: var(--text-gray); font-size: 1rem; max-width: 600px; margin: 0 auto;">Compare storage devices side-by-side and find the perfect solution for your needs.</p>
-            </div>
-        </div>
-    </section>
+ 
+    <!-- Authentication form section -->
+    <main class="auth-page">
+        <div class="auth-container" data-aos="fade-up">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your OceanGate account</p>
+                </div>
 
-    <section class="comparison-container">
-        <div class="container">
-            <div class="mb-5" data-aos="fade-up">
-                <a href="shop.html" class="comparison-action-btn"><i class="fas fa-plus"></i> Add Products to Compare</a>
-                <button class="comparison-action-btn secondary-btn" onclick="clearComparison()"><i class="fas fa-trash"></i> Clear All</button>
-                <button class="comparison-action-btn secondary-btn" onclick="downloadComparison()"><i class="fas fa-download"></i> Download CSV</button>
-            </div>
-            <div id="comparisonTableContainer" data-aos="fade-up"></div>
-        </div>
-    </section>
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+                    </div>
 
-    <footer class="footer">
-        <div class="email-subscription-section text-center">
-            <div class="container">
-                <div class="email-subscribe-card mx-auto p-4 p-lg-5">
-                    <div class="row align-items-center gy-4">
-                        <div class="col-12 col-lg-6 text-lg-start">
-                            <p class="email-subtitle">FIND YOUR PERFECT MATCH</p>
-                            <h2>Subscribe for Product Recommendations</h2>
-                            <p class="email-subtext">Get personalized storage recommendations based on your needs.</p>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <form class="email-form d-flex flex-column flex-sm-row gap-3 align-items-center" action="#" method="post">
-                                <input type="email" class="form-control email-input" placeholder="Enter your email" required>
-                                <button type="submit" class="btn btn-red email-submit-btn">Subscribe Now</button>
-                            </form>
+                    <div class="form-group password-field">
+                        <label for="password">Password</label>
+                        <div class="password-input-wrap">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+                            <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                <i class="fas fa-eye"></i>
+                            </button>
                         </div>
                     </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-red btn-block">Sign In</button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>Or continue with</span>
+                </div>
+
+                <div class="social-auth">
+                    <button class="social-btn google-btn" title="Sign in with Google">
+                        <i class="fab fa-google"></i>
+                    </button>
+                    <button class="social-btn github-btn" title="Sign in with GitHub">
+                        <i class="fab fa-github"></i>
+                    </button>
+                    <button class="social-btn facebook-btn" title="Sign in with Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="./signup.html" class="auth-link">Sign up here</a></p>
                 </div>
             </div>
         </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 60px;">
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a href="index.html" class="footer-logo">OCEANGATE</a>
-                    <p class="pe-lg-5" style="color: var(--text-gray); font-size: 0.9rem;">Your trusted source for premium storage solutions and expert technology guides.</p>
+                    <a href="index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
+                            alt="OceanGate Logo"></a>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Premium storage solutions for all your data needs.</p>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2">
                     <h5>Quick Links</h5>
                     <a href="index.html" class="footer-link">Home</a>
-                    <a href="shop.html" class="footer-link">Shop</a>
-                    <a href="comparison.html" class="footer-link">Compare</a>
+                    <a href="about.html" class="footer-link">About</a>
                     <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="shop.html" class="footer-link">Shop</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2">
                     <h5>Support</h5>
-                    <a href="contact.html" class="footer-link">FAQ</a>
-                    <a href="contact.html" class="footer-link">Shipping</a>
-                    <a href="contact.html" class="footer-link">Returns</a>
-                    <a href="contact.html" class="footer-link">Warranty</a>
+                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="#" class="footer-link">Documentation</a>
+                    <a href="#" class="footer-link">Status</a>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
-                    <h5>Company</h5>
-                    <a href="about.html" class="footer-link">About Us</a>
-                    <a href="contact.html" class="footer-link">Careers</a>
-                    <a href="contact.html" class="footer-link">Partners</a>
-                    <a href="contact.html" class="footer-link">Press</a>
+                    <h5>Legal</h5>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">Cookies</a>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
                     <h5>Get in Touch</h5>
                     <p style="color: var(--text-gray); font-size: 0.9rem;">Karachi, Pakistan</p>
                     <a href="mailto:support@oceangate.com" class="footer-link">support@oceangate.com</a>
-                    <div class="social-icons mt-4">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
                 </div>
             </div>
             <div class="copyright-section text-center">
@@ -162,8 +181,10 @@
         </div>
     </footer>
 
+    <!-- Global system JS (loaded first) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
+    <!-- Authentication feature JS -->
     <script src="./js/auth.js"></script>
 </body>
 

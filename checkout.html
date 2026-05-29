@@ -15,7 +15,8 @@
     <!-- Header navigation -->
     <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
-            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.svg" alt="OceanGate Logo"></a>
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
+  alt="OceanGate Logo"></a>
             <nav class="desktop-nav d-none d-lg-flex">
                 <div class="nav-item-wrapper">
                     <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
@@ -34,6 +35,7 @@
                     <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="./shop.html"><span>--</span> Products</a>
+                        <a href="./comparison.html"><span>--</span> compare devices</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
@@ -51,13 +53,29 @@
                 </div>
             </nav>
             <div class="header-actions d-flex align-items-center">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="far fa-user"></i></a>
-                <div class="cart-icon"><a href="shop.html"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
+                <div class="search-wrapper me-3">
+                    <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
+                    <div class="search-expand" aria-hidden="true">
+                        <input id="globalSearchInput" class="search-input" type="text" placeholder="Search products, e.g. Kingston SSD" autocomplete="off">
+                        <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <button class="menu-btn d-lg-none" id="menuBtn"><span></span><span></span><span></span></button>
             </div>
         </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="shop.html">Shop</a>
+                <a href="comparison.html">Compare</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
-
     <!-- Checkout page hero -->
     <section class="checkout-header">
         <div class="container text-center">
@@ -153,6 +171,7 @@
     <!-- Checkout page scripts and interactions -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/auth.js"></script>
 </body>
 
 </html>

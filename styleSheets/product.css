@@ -1,0 +1,218 @@
+/* ============================
+   Product Details Feature Styles (product-details.html)
+   Extends global styleSheets/style.css
+   ============================ */
+
+.product-details-page {
+    min-height: 100vh;
+}
+
+.product-breadcrumb {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.product-showcase {
+    background: linear-gradient(180deg, rgba(3, 4, 6, 0.95), rgba(5, 5, 7, 0.92));
+}
+
+.product-detail-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-detail-image div {
+    transition: transform 0.3s ease;
+}
+
+.product-detail-image:hover div {
+    transform: scale(1.05);
+}
+
+.product-info h1 {
+    line-height: 1.1;
+}
+
+.product-specs-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(92, 92, 92, 0.25);
+    border-radius: 6px;
+}
+
+.spec-item-label {
+    color: var(--text-gray);
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.spec-item-value {
+    color: var(--text-white);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.spec-item-value .highlight {
+    color: var(--primary-red);
+    font-weight: 700;
+}
+
+/* Quantity and action controls */
+#addToCartBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+#addToCartBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(157, 0, 0, 0.16);
+}
+
+#quantityInput {
+    max-width: 100%;
+}
+
+/* Related products grid */
+.related-product-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(92, 92, 92, 0.35);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.related-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px rgba(157, 0, 0, 0.15);
+    border-color: rgba(157, 0, 0, 0.4);
+}
+
+.related-product-image {
+    background: linear-gradient(135deg, #0f1114, #0b0b0e);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(92, 92, 92, 0.25);
+    transition: all 0.3s ease;
+}
+
+.related-product-image i {
+    font-size: 3.2rem;
+    color: var(--primary-red);
+    opacity: 0.6;
+}
+
+.related-product-card:hover .related-product-image {
+    background: linear-gradient(135deg, #1a1620, #0f0f12);
+}
+
+.related-product-card:hover .related-product-image i {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+.related-product-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.related-product-title {
+    color: var(--text-white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.related-product-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.related-product-badge {
+    background: rgba(157, 0, 0, 0.15);
+    color: var(--primary-red);
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.related-product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid rgba(92, 92, 92, 0.25);
+}
+
+.related-product-price {
+    color: var(--text-white);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.related-product-link {
+    background: rgba(157, 0, 0, 0.2);
+    color: var(--primary-red);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.related-product-link:hover {
+    background: rgba(157, 0, 0, 0.4);
+    color: var(--accent-coral);
+}
+
+/* Responsive design */
+@media (max-width: 991px) {
+    .product-specs-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .product-info {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-detail-image div {
+        height: 300px !important;
+    }
+
+    .product-info h1 {
+        font-size: 1.6rem;
+    }
+
+    .related-product-card {
+        margin-bottom: 20px;
+    }
+}
