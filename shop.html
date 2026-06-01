@@ -9,14 +9,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./styleSheets/style.css">
-    <link rel="stylesheet" href="./styleSheets/shop.css">
+        <link rel="stylesheet" href="./styleSheets/shop.css">
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo/favicon.png">
 </head>
 
 <body>
     <!-- Header navigation -->
+          <!-- Preloader -->
+    <div id="og-preloader-shuttle">
+      <div class="og-loader-wrapper">
+        <h1 class="og-loader-logo logo"><img src="./src/img/logo/logo-black-theme1.png" alt=""></h1>
+        <div class="og-progress-frame">
+            <div class="og-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Header navigation and mobile menu -->
     <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
-            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.svg" alt="OceanGate Logo"></a>
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
+  alt="OceanGate Logo"></a>
             <nav class="desktop-nav d-none d-lg-flex">
                 <div class="nav-item-wrapper">
                     <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
@@ -32,9 +44,10 @@
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
-                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <a href="./comparison.html" class="nav-link">Comparison<span><i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-box">
                         <a href="./shop.html"><span>--</span> Products</a>
+                        <a href="./comparison.html"><span>--</span> compare devices</a>
                     </div>
                 </div>
                 <div class="nav-item-wrapper">
@@ -52,6 +65,8 @@
                 </div>
             </nav>
             <div class="header-actions d-flex align-items-center">
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
                 <div class="search-wrapper me-3">
                     <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
                     <div class="search-expand" aria-hidden="true">
@@ -59,8 +74,6 @@
                         <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
                     </div>
                 </div>
-                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
-                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
                 <button class="menu-btn d-lg-none" id="menuBtn"><span></span><span></span><span></span></button>
             </div>
         </div>
@@ -71,12 +84,77 @@
                 <a href="shop.html">Shop</a>
                 <a href="comparison.html">Compare</a>
                 <a href="contact.html">Contact</a>
+                <a href="login.html">Sign In</a>
+                <a href="signup.html">Sign Up</a>
             </nav>
         </div>
     </header>
 
+    
+    <section class="shop-promo-carousel-section">
+    <div id="oceanGateShopCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+        
+        <!-- Bottom Dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#oceanGateShopCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#oceanGateShopCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#oceanGateShopCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- Slides Wrapper -->
+        <div class="carousel-inner">
+            
+            <!-- Slide 1: Special Offer Banner (No Blur Dynamic Grid) -->
+            <div class="carousel-item active">
+                <div class="carousel-img-wrapper first-slide-bg">
+                    <img src="./src/img/banners/banner-offer.jpg" class="d-block promo-banner-asset central-banner" alt="Special 75 Percent Discount Sale">
+                </div>
+            </div>
+
+            <!-- Slide 2: Next Gen Hardware + Visible H1 & P -->
+            <div class="carousel-item">
+                <div class="carousel-img-wrapper text-slide-bg ">
+                    <img src="./src/img/banners/bg2.jpg" class="d-block w-100 promo-banner-asset" alt="Premium Hardware Tier Spotlight">
+                    <div class="custom-slider-caption">
+                        <h1 class="slider-h1">NEW ARRIVALS</h1>
+                        <p class="slider-p">Next-Gen NVMe Protocols Now In Stock.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Secure Storage Vault + Visible H1 & P -->
+            <div class="carousel-item">
+                <div class="carousel-img-wrapper text-slide-bg">
+                    <img src="./src/img/banners/bg1.jpg" class="d-block w-100 promo-banner-asset" alt="Cyber Grid Line Vault Tech">
+                    <div class="custom-slider-caption">
+                        <h1 class="slider-h1">SECURE MATRIX VAULT</h1>
+                        <p class="slider-p">Military-Grade Hardware Encryption Storage Asset.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controllers -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#oceanGateShopCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#oceanGateShopCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+
+    </div>
+</section>
+
+<section class="shop-page-header section-panel" style=" padding: 80px 0; border-bottom: 1px solid rgba(255, 77, 77, 0.15);">
+    <div class="container text-center">
+            <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--text-white); margin-bottom: 12px;">Browse Storage Solutions</h1>
+            <p style="color: var(--text-gray); font-size: 1rem; margin: 0;">Discover premium optical media and high-speed SSDs in a curated marketplace experience.</p>
+        </div>
+    </section>
+
     <!-- Promotion showcase rows (placeholders) -->
-    <section class="shop-promotions" style="padding: 30px 0 0;">
+    <section class="shop-promotions" style="padding: 30px 0;">
         <div class="container">
             <div class="row g-3">
                 <div class="col-md-6">
@@ -108,14 +186,6 @@
             </div>
         </div>
     </section>
-
-    <section class="shop-page-header" style="background: var(--bg-black); padding: 60px 0; border-bottom: 1px solid rgba(255, 77, 77, 0.15);">
-        <div class="container text-center">
-            <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--text-white); margin-bottom: 12px;">Browse Storage Solutions</h1>
-            <p style="color: var(--text-gray); font-size: 1rem; margin: 0;">Discover premium optical media and high-speed SSDs in a curated marketplace experience.</p>
-        </div>
-    </section>
-
     <section id="shopPage" style="background: var(--bg-dark); padding: 60px 0;">
         <div class="container-fluid">
             <div class="row g-4">
@@ -233,7 +303,7 @@
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a href="index.html" class="footer-logo">OCEANGATE</a>
+                    <a href="index.html" class="footer-logo"><img src="./src/img/logo/logo-black-theme1.png" alt=""></a>
                     <p class="pe-lg-5" style="color: var(--text-gray); font-size: 0.9rem;">Premium storage devices for all your data needs.</p>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2">
@@ -279,6 +349,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
 </body>

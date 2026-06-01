@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanGate | Sign In</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Global system architecture (loaded first) -->
+    <link rel="stylesheet" href="./styleSheets/style.css">
+    <!-- Authentication feature extension -->
+    <link rel="stylesheet" href="./styleSheets/auth.css">
+</head>
+
+<body>
+    <!-- Header navigation -->
+          <!-- Preloader -->
+    <div id="og-preloader-shuttle">
+      <div class="og-loader-wrapper">
+        <h1 class="og-loader-logo logo"><img src="./src/img/logo/logo-black-theme1.png" alt=""></h1>
+        <div class="og-progress-frame">
+            <div class="og-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Header navigation and mobile menu -->
+    <header class="header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
+                    alt="OceanGate Logo"></a>
+
+            <nav class="desktop-nav d-none d-lg-flex">
+                <div class="nav-item-wrapper">
+                    <a href="./index.html" class="nav-link">Home<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./index.html" style="color:black;"><span>--</span> Home 1</a>
+                        <a href="./index.html"><span>--</span> Home 2</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./about.html" class="nav-link">About<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./about.html"><span>--</span> Our journey</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./shop.html" class="nav-link">Shop<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./shop.html"><span>--</span> Products</a>
+                        <a href="./comparison.html"><span>--</span> compare devices</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./blog.html" class="nav-link">Blog<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./blog.html"><span>--</span> Latest News</a>
+                    </div>
+                </div>
+                <div class="nav-item-wrapper">
+                    <a href="./contact.html" class="nav-link">Contact<span><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="dropdown-box">
+                        <a href="./contact.html"><span>--</span> Get in Touch</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-actions d-flex align-items-center">
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
+                <div class="search-wrapper me-3">
+                    <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
+                    <div class="search-expand" aria-hidden="true">
+                        <input id="globalSearchInput" class="search-input" type="text" placeholder="Search products, e.g. Kingston SSD" autocomplete="off">
+                        <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <button class="menu-btn d-lg-none" id="menuBtn"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="shop.html">Shop</a>
+                <a href="comparison.html">Compare</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Authentication form section -->
+    <main class="auth-page">
+        <div class="auth-container" data-aos="fade-up">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your OceanGate account</p>
+                </div>
+
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-red btn-block">Sign In</button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>Or continue with</span>
+                </div>
+
+                <div class="social-auth">
+                    <button class="social-btn google-btn" title="Sign in with Google">
+                        <i class="fab fa-google"></i>
+                    </button>
+                    <button class="social-btn github-btn" title="Sign in with GitHub">
+                        <i class="fab fa-github"></i>
+                    </button>
+                    <button class="social-btn facebook-btn" title="Sign in with Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="./signup.html" class="auth-link">Sign up here</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 60px;">
+        <div class="container">
+            <div class="row pt-5 pb-5">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a href="index.html" class="footer-logo"><img src="./src/img/logo/logo-black-theme1.png"
+                            alt="OceanGate Logo"></a>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Premium storage solutions for all your data needs.</p>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5>Quick Links</h5>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="shop.html" class="footer-link">Shop</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5>Support</h5>
+                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="#" class="footer-link">Documentation</a>
+                    <a href="#" class="footer-link">Status</a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
+                    <h5>Legal</h5>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">Cookies</a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mt-4 mt-md-0">
+                    <h5>Get in Touch</h5>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Karachi, Pakistan</p>
+                    <a href="mailto:support@oceangate.com" class="footer-link">support@oceangate.com</a>
+                </div>
+            </div>
+            <div class="copyright-section text-center">
+                <p>© 2026 OceanGate Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global system JS (loaded first) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/app.js"></script>
+    <!-- Authentication feature JS -->
+    <script src="./js/auth.js"></script>
+</body>
+
+</html>
