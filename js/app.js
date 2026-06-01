@@ -3,12 +3,31 @@
    Cart, comparison, checkout, search, and notifications
    =========================== */
 
+// OCEANGATE PRE-LOADER IMPLEMENTATION
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('og-preloader-shuttle');
+    
+    if (preloader) {
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            setTimeout(() => {
+                preloader.remove();
+            }, 500);
+            
+        }, 1500);
+    }
+});
+
+
 const cartState = {
   items: [],
   total: 0,
   load() {
     try {
-      const stored = JSON.parse(localStorage.getItem("oceangate_cart") || "null");
+      const stored = JSON.parse(
+        localStorage.getItem("oceangate_cart") || "null",
+      );
       if (stored && Array.isArray(stored.items)) {
         this.items = stored.items;
         this.total =
@@ -60,11 +79,14 @@ const cartState = {
   },
 };
 
+/* Comparison state management */
 const comparisonState = {
   items: [],
   load() {
     try {
-      const stored = JSON.parse(localStorage.getItem("comparisonList") || "null");
+      const stored = JSON.parse(
+        localStorage.getItem("oceangate_comparison") || "null",
+      );
       this.items = stored && Array.isArray(stored.items) ? stored.items : [];
     } catch (error) {
       this.items = [];
@@ -72,18 +94,15 @@ const comparisonState = {
   },
   save() {
     localStorage.setItem(
-      "comparisonList",
+      "oceangate_comparison",
       JSON.stringify({ items: this.items }),
     );
   },
   addItem(product) {
-    if (this.items.some((item) => item.id === product.id)) return;
-    if (this.items.length >= 3) {
-      showNotification("Maximum comparison selection is 3 items", "error");
-      return;
+    if (!this.items.some((item) => item.id === product.id)) {
+      this.items.push({ ...product });
+      this.save();
     }
-    this.items.push({ ...product });
-    this.save();
   },
   removeItem(productId) {
     this.items = this.items.filter((item) => item.id !== productId);
@@ -95,271 +114,433 @@ const comparisonState = {
   },
 };
 
+/* Product metadata for shop and search */
 const productsDatabase = [
+  /* ===== CD-R / CD-RW OPTICAL MEDIA (IDs: 101-110) ===== */
   {
     id: 101,
-    name: "Sony CD-R 700MB Archival Premium",
-    brand: "Sony",
-    category: "CD",
+    name: "Sony CD-R 700MB Archival Grade",
+    brand: "sony",
+    category: "cd-r",
     price: 350,
-    speed: "52X",
+    speed: "52",
     capacity: "700MB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=1',
     specs: {
       readSpeed: "52X",
       writeSpeed: "52X",
       interface: "Optical",
-      type: "CD",
-      lifespan: "50+ Years",
+      type: "CD-R",
+      lifespan: "10+ Years",
     },
   },
+  
   {
     id: 102,
-    name: "Verbatim CD-R 700MB Professional",
-    brand: "Verbatim",
-    category: "CD",
-    price: 360,
-    speed: "52X",
+    name: "Verbatim CD-R 700MB Premium",
+    brand: "verbatim",
+    category: "cd-r",
+    price: 380,
+    speed: "52",
     capacity: "700MB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=2',
     specs: {
       readSpeed: "52X",
       writeSpeed: "52X",
       interface: "Optical",
-      type: "CD",
-      lifespan: "50+ Years",
+      type: "CD-R",
+      lifespan: "12+ Years",
     },
   },
   {
     id: 103,
     name: "Samsung CD-RW 700MB Rewritable",
-    brand: "Samsung",
-    category: "CD",
+    brand: "samsung",
+    category: "cd-rw",
     price: 420,
-    speed: "24X",
+    speed: "24",
     capacity: "700MB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=3',
     specs: {
       readSpeed: "24X",
       writeSpeed: "24X",
       interface: "Optical",
       type: "CD-RW",
-      lifespan: "50+ Years",
+      lifespan: "10+ Years",
     },
   },
   {
     id: 104,
-    name: "Kingston CD-R 700MB Classic",
-    brand: "Kingston",
-    category: "CD",
+    name: "Kingston CD-R 700MB Standard",
+    brand: "kingston",
+    category: "cd-r",
     price: 340,
-    speed: "52X",
+    speed: "52",
     capacity: "700MB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=4',
     specs: {
       readSpeed: "52X",
       writeSpeed: "52X",
       interface: "Optical",
-      type: "CD",
-      lifespan: "50+ Years",
+      type: "CD-R",
+      lifespan: "10+ Years",
     },
   },
   {
     id: 105,
-    name: "SanDisk CD-R 700MB Archive",
-    brand: "SanDisk",
-    category: "CD",
-    price: 365,
-    speed: "52X",
+    name: "SanDisk CD-R 700MB Media",
+    brand: "sandisk",
+    category: "cd-r",
+    price: 360,
+    speed: "52",
     capacity: "700MB",
-    image: "src/img/placeholder.png",
+    image: 'https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&w=600&q=80' ,
     specs: {
       readSpeed: "52X",
       writeSpeed: "52X",
       interface: "Optical",
-      type: "CD",
-      lifespan: "50+ Years",
+      type: "CD-R",
+      lifespan: "10+ Years",
     },
   },
+
+  /* ===== DVD / DVD-RW OPTICAL MEDIA (IDs: 111-120) ===== */
   {
-    id: 106,
-    name: "Sony DVD-R 4.7GB High-Speed",
-    brand: "Sony",
-    category: "DVD",
-    price: 780,
-    speed: "16X",
+    id: 111,
+    name: "Verbatim DVD-RW 4.7GB Single Layer",
+    brand: "verbatim",
+    category: "dvd-rw",
+    price: 650,
+    speed: "16",
     capacity: "4.7GB",
-    image: "src/img/placeholder.png",
-    specs: {
-      readSpeed: "16X",
-      writeSpeed: "16X",
-      interface: "Optical",
-      type: "DVD",
-      lifespan: "50+ Years",
-    },
-  },
-  {
-    id: 107,
-    name: "Verbatim DVD-RW 4.7GB Reusable",
-    brand: "Verbatim",
-    category: "DVD",
-    price: 720,
-    speed: "16X",
-    capacity: "4.7GB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=5',
     specs: {
       readSpeed: "16X",
       writeSpeed: "8X",
       interface: "Optical",
       type: "DVD-RW",
-      lifespan: "50+ Years",
+      lifespan: "10+ Years",
     },
   },
   {
-    id: 108,
-    name: "Samsung DVD-R 8.5GB Dual Layer",
-    brand: "Samsung",
-    category: "DVD",
-    price: 890,
-    speed: "16X",
+    id: 112,
+    name: "Sony DVD-R 8.5GB Dual Layer",
+    brand: "sony",
+    category: "dvd-r",
+    price: 850,
+    speed: "16",
     capacity: "8.5GB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=6',
     specs: {
       readSpeed: "16X",
       writeSpeed: "16X",
       interface: "Optical",
       type: "DVD-R DL",
-      lifespan: "50+ Years",
+      lifespan: "10+ Years",
     },
   },
   {
-    id: 109,
-    name: "Kingston DVD-R 4.7GB Archive",
-    brand: "Kingston",
-    category: "DVD",
-    price: 765,
-    speed: "16X",
+    id: 113,
+    name: "Samsung DVD-RW 4.7GB Media Pack",
+    brand: "samsung",
+    category: "dvd-rw",
+    price: 620,
+    speed: "16",
     capacity: "4.7GB",
-    image: "src/img/placeholder.png",
-    specs: {
-      readSpeed: "16X",
-      writeSpeed: "16X",
-      interface: "Optical",
-      type: "DVD",
-      lifespan: "50+ Years",
-    },
-  },
-  {
-    id: 110,
-    name: "SanDisk DVD-RW 4.7GB Professional",
-    brand: "SanDisk",
-    category: "DVD",
-    price: 700,
-    speed: "16X",
-    capacity: "4.7GB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=7',
     specs: {
       readSpeed: "16X",
       writeSpeed: "8X",
       interface: "Optical",
       type: "DVD-RW",
-      lifespan: "50+ Years",
+      lifespan: "10+ Years",
     },
   },
   {
-    id: 111,
-    name: "Sony Blu-ray BD-R 25GB Pro",
-    brand: "Sony",
-    category: "Blu-ray",
-    price: 2200,
-    speed: "10X",
-    capacity: "25GB",
-    image: "src/img/placeholder.png",
+    id: 114,
+    name: "Kingston DVD-R 4.7GB Archive",
+    brand: "kingston",
+    category: "dvd-r",
+    price: 580,
+    speed: "16",
+    capacity: "4.7GB",
+    image: 'https://picsum.photos/600/400?tech=8',
     specs: {
-      readSpeed: "10X",
-      writeSpeed: "10X",
+      readSpeed: "16X",
+      writeSpeed: "16X",
       interface: "Optical",
-      type: "Blu-ray",
-      lifespan: "50+ Years",
+      type: "DVD-R",
+      lifespan: "10+ Years",
     },
   },
   {
-    id: 112,
-    name: "Verbatim Blu-ray BD-R 50GB Archive",
-    brand: "Verbatim",
-    category: "Blu-ray",
-    price: 2450,
-    speed: "10X",
+    id: 115,
+    name: "SanDisk DVD-RW 4.7GB Professional",
+    brand: "sandisk",
+    category: "dvd-rw",
+    price: 680,
+    speed: "16",
+    capacity: "4.7GB",
+    image: 'https://picsum.photos/600/400?tech=9',
+    specs: {
+      readSpeed: "16X",
+      writeSpeed: "8X",
+      interface: "Optical",
+      type: "DVD-RW",
+      lifespan: "10+ Years",
+    },
+  },
+
+  /* ===== BLU-RAY OPTICAL MEDIA (IDs: 121-127) ===== */
+  {
+    id: 121,
+    name: "Sony Blu-ray BD-R 50GB Single Layer",
+    brand: "sony",
+    category: "blu-ray",
+    price: 2500,
+    speed: "10",
     capacity: "50GB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=10',
     specs: {
       readSpeed: "10X",
       writeSpeed: "10X",
       interface: "Optical",
       type: "Blu-ray",
-      lifespan: "50+ Years",
+      lifespan: "10+ Years",
     },
   },
   {
-    id: 113,
+    id: 122,
+    name: "Verbatim Blu-ray BD-R 25GB",
+    brand: "verbatim",
+    category: "blu-ray",
+    price: 1800,
+    speed: "10",
+    capacity: "25GB",
+    image: 'https://picsum.photos/600/400?tech=11',
+    specs: {
+      readSpeed: "10X",
+      writeSpeed: "10X",
+      interface: "Optical",
+      type: "Blu-ray",
+      lifespan: "10+ Years",
+    },
+  },
+  {
+    id: 123,
     name: "Samsung Blu-ray BD-R 100GB Triple Layer",
-    brand: "Samsung",
-    category: "Blu-ray",
+    brand: "samsung",
+    category: "blu-ray",
     price: 4200,
-    speed: "10X",
+    speed: "10",
     capacity: "100GB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=12',
     specs: {
       readSpeed: "10X",
       writeSpeed: "10X",
       interface: "Optical",
       type: "Blu-ray TL",
-      lifespan: "50+ Years",
+      lifespan: "10+ Years",
     },
   },
   {
-    id: 114,
-    name: "Kingston Blu-ray BD-R 25GB Elite",
-    brand: "Kingston",
-    category: "Blu-ray",
-    price: 1750,
-    speed: "10X",
-    capacity: "25GB",
-    image: "src/img/placeholder.png",
+    id: 124,
+    name: "Kingston Blu-ray BD-R 50GB AV Grade",
+    brand: "kingston",
+    category: "blu-ray",
+    price: 2400,
+    speed: "10",
+    capacity: "50GB",
+    image: 'https://picsum.photos/600/400?tech=13',
     specs: {
       readSpeed: "10X",
       writeSpeed: "10X",
       interface: "Optical",
       type: "Blu-ray",
-      lifespan: "50+ Years",
+      lifespan: "10+ Years",
     },
   },
+
+  /* ===== SSD STORAGE DRIVES (IDs: 201-215) ===== */
   {
-    id: 115,
-    name: "SanDisk Blu-ray BD-R 25GB Studio",
-    brand: "SanDisk",
-    category: "Blu-ray",
-    price: 1950,
-    speed: "10X",
-    capacity: "25GB",
-    image: "src/img/placeholder.png",
+    id: 201,
+    name: "Kingston A400 240GB SATA SSD",
+    brand: "kingston",
+    category: "ssd",
+    price: 4200,
+    speed: "550",
+    capacity: "240GB",
+    image: 'https://picsum.photos/600/400?tech=14',
     specs: {
-      readSpeed: "10X",
-      writeSpeed: "10X",
-      interface: "Optical",
-      type: "Blu-ray",
-      lifespan: "50+ Years",
+      readSpeed: "550MB/s",
+      writeSpeed: "500MB/s",
+      interface: "SATA III",
+      type: "SSD",
+      lifespan: "5-7 Years",
     },
   },
   {
-    id: 116,
-    name: "Sony 970 EVO 500GB NVMe SSD",
-    brand: "Sony",
-    category: "SSD",
-    price: 11500,
-    speed: "3500MB/s",
+    id: 202,
+    name: "Kingston A400 512GB SATA SSD",
+    brand: "kingston",
+    category: "ssd",
+    price: 7500,
+    speed: "570",
+    capacity: "512GB",
+    image: 'https://picsum.photos/600/400?tech=15',
+    specs: {
+      readSpeed: "570MB/s",
+      writeSpeed: "550MB/s",
+      interface: "SATA III",
+      type: "SSD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 203,
+    name: "Kingston A400 1TB SATA SSD",
+    brand: "kingston",
+    category: "ssd",
+    price: 13500,
+    speed: "570",
+    capacity: "1TB",
+    image: 'https://picsum.photos/600/400?tech=16',
+    specs: {
+      readSpeed: "570MB/s",
+      writeSpeed: "550MB/s",
+      interface: "SATA III",
+      type: "SSD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 204,
+    name: "Samsung 860 EVO 250GB SATA SSD",
+    brand: "samsung",
+    category: "ssd",
+    price: 4800,
+    speed: "550",
+    capacity: "250GB",
+    image: 'https://picsum.photos/600/400?tech=17',
+    specs: {
+      readSpeed: "550MB/s",
+      writeSpeed: "520MB/s",
+      interface: "SATA III",
+      type: "SSD",
+      lifespan: "4-6 Years",
+    },
+  },
+  {
+    id: 205,
+    name: "Samsung 860 EVO 500GB SATA SSD",
+    brand: "samsung",
+    category: "ssd",
+    price: 8500,
+    speed: "550",
     capacity: "500GB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=18',
+    specs: {
+      readSpeed: "550MB/s",
+      writeSpeed: "520MB/s",
+      interface: "SATA III",
+      type: "SSD",
+      lifespan: "4-6 Years",
+    },
+  },
+  {
+    id: 206,
+    name: "Samsung 860 EVO 1TB SATA SSD",
+    brand: "samsung",
+    category: "ssd",
+    price: 15000,
+    speed: "550",
+    capacity: "1TB",
+    image: 'https://picsum.photos/600/400?tech=19',
+    specs: {
+      readSpeed: "550MB/s",
+      writeSpeed: "520MB/s",
+      interface: "SATA III",
+      type: "SSD",
+      lifespan: "4-6 Years",
+    },
+  },
+  {
+    id: 207,
+    name: "SanDisk SSD Plus 240GB SATA",
+    brand: "sandisk",
+    category: "ssd",
+    price: 4100,
+    speed: "530",
+    capacity: "240GB",
+    image: 'https://picsum.photos/600/400?tech=20',
+    specs: {
+      readSpeed: "530MB/s",
+      writeSpeed: "450MB/s",
+      interface: "SATA III",
+      type: "SSD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 208,
+    name: "SanDisk SSD Plus 480GB SATA",
+    brand: "sandisk",
+    category: "ssd",
+    price: 7200,
+    speed: "530",
+    capacity: "480GB",
+    image: 'https://picsum.photos/600/400?tech=21',
+    specs: {
+      readSpeed: "530MB/s",
+      writeSpeed: "450MB/s",
+      interface: "SATA III",
+      type: "SSD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 209,
+    name: "Kingston NV1 500GB NVMe SSD",
+    brand: "kingston",
+    category: "ssd",
+    price: 9200,
+    speed: "2100",
+    capacity: "500GB",
+    image: 'https://picsum.photos/600/400?tech=22',
+    specs: {
+      readSpeed: "2100MB/s",
+      writeSpeed: "1700MB/s",
+      interface: "NVMe M.2",
+      type: "SSD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 210,
+    name: "Kingston NV1 1TB NVMe SSD",
+    brand: "kingston",
+    category: "ssd",
+    price: 16500,
+    speed: "2100",
+    capacity: "1TB",
+    image: 'https://picsum.photos/600/400?tech=23',
+    specs: {
+      readSpeed: "2100MB/s",
+      writeSpeed: "1700MB/s",
+      interface: "NVMe M.2",
+      type: "SSD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 211,
+    name: "Samsung 970 EVO 500GB NVMe SSD",
+    brand: "samsung",
+    category: "ssd",
+    price: 11500,
+    speed: "3500",
+    capacity: "500GB",
+    image: 'https://picsum.photos/600/400?tech=24',
     specs: {
       readSpeed: "3500MB/s",
       writeSpeed: "2500MB/s",
@@ -369,179 +550,161 @@ const productsDatabase = [
     },
   },
   {
-    id: 117,
-    name: "Verbatim N330 480GB NVMe SSD",
-    brand: "Verbatim",
-    category: "SSD",
-    price: 8900,
-    speed: "3200MB/s",
-    capacity: "480GB",
-    image: "src/img/placeholder.png",
-    specs: {
-      readSpeed: "3200MB/s",
-      writeSpeed: "3000MB/s",
-      interface: "NVMe M.2",
-      type: "SSD",
-      lifespan: "5-7 Years",
-    },
-  },
-  {
-    id: 118,
-    name: "Samsung 980 PRO 1TB NVMe SSD",
-    brand: "Samsung",
-    category: "SSD",
-    price: 18500,
-    speed: "7000MB/s",
+    id: 212,
+    name: "Samsung 970 EVO 1TB NVMe SSD",
+    brand: "samsung",
+    category: "ssd",
+    price: 19500,
+    speed: "3500",
     capacity: "1TB",
-    image: "src/img/placeholder.png",
-    specs: {
-      readSpeed: "7000MB/s",
-      writeSpeed: "5100MB/s",
-      interface: "NVMe M.2",
-      type: "SSD",
-      lifespan: "5-7 Years",
-    },
-  },
-  {
-    id: 119,
-    name: "Kingston A400 SATA SSD 480GB",
-    brand: "Kingston",
-    category: "SSD",
-    price: 8800,
-    speed: "500MB/s",
-    capacity: "480GB",
-    image: "src/img/placeholder.png",
-    specs: {
-      readSpeed: "500MB/s",
-      writeSpeed: "450MB/s",
-      interface: "SATA III",
-      type: "SSD",
-      lifespan: "5-7 Years",
-    },
-  },
-  {
-    id: 120,
-    name: "Kingston KC2500 1TB NVMe SSD",
-    brand: "Kingston",
-    category: "SSD",
-    price: 14600,
-    speed: "3500MB/s",
-    capacity: "1TB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=25',
     specs: {
       readSpeed: "3500MB/s",
-      writeSpeed: "2900MB/s",
+      writeSpeed: "2500MB/s",
       interface: "NVMe M.2",
       type: "SSD",
       lifespan: "5-7 Years",
     },
   },
   {
-    id: 121,
-    name: "SanDisk CD-R 700MB Premium",
-    brand: "SanDisk",
-    category: "CD",
-    price: 365,
-    speed: "52X",
-    capacity: "700MB",
-    image: "src/img/placeholder.png",
-    specs: {
-      readSpeed: "52X",
-      writeSpeed: "52X",
-      interface: "Optical",
-      type: "CD",
-      lifespan: "50+ Years",
-    },
-  },
-  {
-    id: 122,
-    name: "SanDisk DVD-R 4.7GB Reliable",
-    brand: "SanDisk",
-    category: "DVD",
-    price: 590,
-    speed: "16X",
-    capacity: "4.7GB",
-    image: "src/img/placeholder.png",
-    specs: {
-      readSpeed: "16X",
-      writeSpeed: "16X",
-      interface: "Optical",
-      type: "DVD",
-      lifespan: "50+ Years",
-    },
-  },
-  {
-    id: 123,
-    name: "SanDisk Blu-ray BD-RE 25GB Rewritable",
-    brand: "SanDisk",
-    category: "Blu-ray",
-    price: 3050,
-    speed: "6X",
-    capacity: "25GB",
-    image: "src/img/placeholder.png",
-    specs: {
-      readSpeed: "6X",
-      writeSpeed: "6X",
-      interface: "Optical",
-      type: "Blu-ray",
-      lifespan: "50+ Years",
-    },
-  },
-  {
-    id: 124,
-    name: "SanDisk Ultra 500GB SATA SSD",
-    brand: "SanDisk",
-    category: "SSD",
-    price: 8900,
-    speed: "520MB/s",
+    id: 213,
+    name: "SanDisk Ultra 3D 500GB SATA SSD",
+    brand: "sandisk",
+    category: "ssd",
+    price: 8800,
+    speed: "560",
     capacity: "500GB",
-    image: "src/img/placeholder.png",
+    image: 'https://picsum.photos/600/400?tech=26',
     specs: {
-      readSpeed: "520MB/s",
-      writeSpeed: "500MB/s",
+      readSpeed: "560MB/s",
+      writeSpeed: "530MB/s",
       interface: "SATA III",
       type: "SSD",
       lifespan: "5-7 Years",
     },
   },
   {
-    id: 125,
-    name: "SanDisk Extreme 1TB NVMe",
-    brand: "SanDisk",
-    category: "SSD",
-    price: 18800,
-    speed: "6600MB/s",
-    capacity: "1TB",
-    image: "src/img/placeholder.png",
+    id: 214,
+    name: "Crucial MX500 500GB SATA SSD",
+    brand: "crucial",
+    category: "ssd",
+    price: 8900,
+    speed: "560",
+    capacity: "500GB",
+    image: 'https://picsum.photos/600/400?tech=27',
     specs: {
-      readSpeed: "6600MB/s",
-      writeSpeed: "5000MB/s",
+      readSpeed: "560MB/s",
+      writeSpeed: "510MB/s",
+      interface: "SATA III",
+      type: "SSD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 215,
+    name: "Intel 660p 512GB NVMe SSD",
+    brand: "intel",
+    category: "ssd",
+    price: 9500,
+    speed: "1800",
+    capacity: "512GB",
+    image: 'https://picsum.photos/600/400?tech=28',
+    specs: {
+      readSpeed: "1800MB/s",
+      writeSpeed: "1200MB/s",
       interface: "NVMe M.2",
       type: "SSD",
+      lifespan: "5-7 Years",
+    },
+  },
+
+  /* ===== HDD STORAGE DRIVES (IDs: 301-305) ===== */
+  {
+    id: 301,
+    name: "Seagate Barracuda 1TB HDD",
+    brand: "seagate",
+    category: "hdd",
+    price: 5500,
+    speed: "150",
+    capacity: "1TB",
+    image: 'https://picsum.photos/600/400?tech=29',
+    specs: {
+      readSpeed: "150MB/s",
+      writeSpeed: "150MB/s",
+      interface: "SATA III",
+      type: "HDD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 302,
+    name: "Seagate Barracuda 2TB HDD",
+    brand: "seagate",
+    category: "hdd",
+    price: 8500,
+    speed: "150",
+    capacity: "2TB",
+    image: 'https://picsum.photos/600/400?tech=30',
+    specs: {
+      readSpeed: "150MB/s",
+      writeSpeed: "150MB/s",
+      interface: "SATA III",
+      type: "HDD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 303,
+    name: "Seagate Barracuda 4TB HDD",
+    brand: "seagate",
+    category: "hdd",
+    price: 14500,
+    speed: "150",
+    capacity: "4TB",
+    image: 'https://picsum.photos/600/400?tech=31',
+    specs: {
+      readSpeed: "150MB/s",
+      writeSpeed: "150MB/s",
+      interface: "SATA III",
+      type: "HDD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 304,
+    name: "WD Blue 2TB HDD Standard",
+    brand: "wd",
+    category: "hdd",
+    price: 8800,
+    speed: "150",
+    capacity: "2TB",
+    image: 'https://picsum.photos/600/400?tech=32',
+    specs: {
+      readSpeed: "150MB/s",
+      writeSpeed: "150MB/s",
+      interface: "SATA III",
+      type: "HDD",
+      lifespan: "5-7 Years",
+    },
+  },
+  {
+    id: 305,
+    name: "WD Blue 4TB HDD Standard",
+    brand: "wd",
+    category: "hdd",
+    price: 15000,
+    speed: "150",
+    capacity: "4TB",
+    image: 'https://picsum.photos/600/400?tech=34',
+    specs: {
+      readSpeed: "150MB/s",
+      writeSpeed: "150MB/s",
+      interface: "SATA III",
+      type: "HDD",
       lifespan: "5-7 Years",
     },
   },
 ];
-
-/* Assign local src images to products when placeholders are present */
-function assignLocalProductImages() {
-  const opticalSrc = 'src/img/SSD_SAMSUNG.png';
-  const ssdSrc = 'src/img/SSD_SAMSUNG.png';
-  const opticalCategories = ['CD', 'DVD', 'Blu-ray'];
-
-  productsDatabase.forEach((product) => {
-    const currentImage = (product.image || '').toString().trim();
-    if (!currentImage || currentImage.includes('placeholder')) {
-      if (opticalCategories.includes(product.category)) {
-        product.image = opticalSrc;
-      } else if (product.category === 'SSD') {
-        product.image = ssdSrc;
-      } else {
-        product.image = opticalSrc;
-      }
-    }
-  });
-}
 
 /* Page initialization and shared UI setup */
 function initPage() {
@@ -567,7 +730,6 @@ function initPage() {
     AOS.init({ duration: 800, once: true, offset: 120 });
   }
 
-  assignLocalProductImages();
   cartState.load();
   comparisonState.load();
   updateCartBadge();
@@ -610,7 +772,9 @@ function toggleCart() {
   if (!drawer || !overlay) return;
   drawer.classList.toggle("active");
   overlay.classList.toggle("active");
+  
 }
+
 
 function refreshCartDrawer() {
   const container = document.getElementById("cartItems");
@@ -631,10 +795,10 @@ function refreshCartDrawer() {
             <div class="cart-item-info">
                 <h6>${item.name}</h6>
                 <p>Qty: ${item.quantity}</p>
-                <p>Rs. ${(item.price * item.quantity).toFixed(2)}</p>
+                <p>$${(item.price * item.quantity).toFixed(2)}</p>
             </div>
             <div class="cart-item-actions">
-                <span class="cart-item-price">Rs. ${(item.price * item.quantity).toFixed(2)}</span>
+                <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
                 <button class="cart-remove-btn" onclick="removeFromCart(${item.id})" aria-label="Remove ${item.name}">
                     <i class="fas fa-trash"></i>
                 </button>
@@ -644,7 +808,7 @@ function refreshCartDrawer() {
     )
     .join("");
 
-  totalElement.textContent = `Rs. ${cartState.total.toFixed(2)}`;
+  totalElement.textContent = cartState.total.toFixed(2);
 }
 
 function removeFromCart(productId) {
@@ -659,7 +823,6 @@ function initializeShopPage() {
   const q = params.get("q");
 
   attachFilterListeners();
-  setupComparisonDelegation();
 
   if (q && q.trim().length) {
     const query = q.trim().toLowerCase();
@@ -698,23 +861,24 @@ function renderProducts(products) {
       return `
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${index * 60}">
                 <a href="./product-details.html?id=${product.id}" style="text-decoration: none;">
-                  <article class="product-card" data-brand="${product.brand}" data-category="${product.category}" data-speed="${product.speed}" data-price="${product.price}">
+                  <article class="product-card">
                     <div class="product-card-image">
-                        <img src="${product.image}" alt="${product.name}" class="product-image" />
+
+                    <img src="${product.image}" alt="${product.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                     </div>
                     <div class="product-card-body">
                         <h5>${product.name}</h5>
                         <div class="product-specs">
-                            <span class="spec-badge">${product.speed}</span>
+                            <span class="spec-badge">${product.speed}X</span>
                             <span class="spec-badge">${product.capacity}</span>
                         </div>
-                        <div class="product-price">Rs. ${product.price}</div>
+                        <div class="product-price">$${product.price.toFixed(2)}</div>
                         <div class="product-actions">
-                            <label class="compare-switch">
-                                <input type="checkbox" class="compare-checkbox" data-product-id="${product.id}" ${isCompared ? "checked" : ""} />
+                            <label class="compare-switch" onclick="event.preventDefault(); event.stopPropagation();">
+                                <input type="checkbox" data-product-id="${product.id}" onchange="toggleComparison(${product.id}, this.checked)" ${isCompared ? "checked" : ""} />
                                 Compare
                             </label>
-                            <button class="add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
+                            <button class="add-to-cart-btn" data-product-id="${product.id}" onclick="event.preventDefault(); event.stopPropagation();">Add to Cart</button>
                         </div>
                     </div>
                   </article>
@@ -892,8 +1056,8 @@ function showWidgetInfo() {
   tooltip.className = "widget-info-tooltip";
   tooltip.style.cssText = `
     position: fixed;
-    bottom: 100px;
-    right: 20px;
+    bottom: 130px;
+    right: 30px;
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid rgba(157, 0, 0, 0.4);
     border-radius: 6px;
@@ -938,37 +1102,6 @@ function attachFilterListeners() {
       filterProducts();
     });
   }
-}
-
-function setupComparisonDelegation() {
-  const grid = document.getElementById("productGrid");
-  if (!grid) return;
-  grid.removeEventListener("change", handleComparisonCheckboxChange);
-  grid.addEventListener("change", handleComparisonCheckboxChange);
-}
-
-function handleComparisonCheckboxChange(event) {
-  const target = event.target;
-  if (!target || !target.classList.contains("compare-checkbox")) return;
-
-  const productId = parseInt(target.dataset.productId, 10);
-  if (Number.isNaN(productId)) return;
-
-  const product = productsDatabase.find((p) => p.id === productId);
-  if (!product) return;
-
-  if (target.checked) {
-    if (comparisonState.items.length >= 3) {
-      target.checked = false;
-      showNotification("Maximum 3 products can be compared at once", "error");
-      return;
-    }
-    comparisonState.addItem(product);
-  } else {
-    comparisonState.removeItem(productId);
-  }
-
-  renderComparisonPage();
 }
 
 function attachAddToCartListeners() {
@@ -1017,7 +1150,7 @@ function filterProducts() {
     document.querySelectorAll(".speed-filter:checked"),
   ).map((el) => el.value);
   const maxPrice =
-    parseFloat(document.getElementById("priceRange")?.value) || 25000;
+    parseFloat(document.getElementById("priceRange")?.value) || 200;
 
   const filtered = productsDatabase.filter((product) => {
     const brandMatch = brands.length === 0 || brands.includes(product.brand);
@@ -1038,8 +1171,8 @@ function resetFilters() {
   const priceRange = document.getElementById("priceRange");
   const priceValue = document.getElementById("priceValue");
   if (priceRange && priceValue) {
-    priceRange.value = 25000;
-    priceValue.textContent = 25000;
+    priceRange.value = 200;
+    priceValue.textContent = 200;
   }
   filterProducts();
 }
@@ -1096,7 +1229,7 @@ function renderComparisonPage() {
     .join("");
 
   const rows = [
-    { label: "Price", key: (item) => `Rs. ${item.price.toFixed(2)}` },
+    { label: "Price", key: (item) => `$${item.price.toFixed(2)}` },
     { label: "Capacity", key: (item) => item.capacity },
     { label: "Read Speed", key: (item) => item.specs.readSpeed },
     { label: "Write Speed", key: (item) => item.specs.writeSpeed },
@@ -1184,7 +1317,7 @@ function downloadComparison() {
   ];
   const rows = comparisonState.items.map((item) => [
     item.name,
-    `Rs. ${item.price.toFixed(2)}`,
+    `$${item.price.toFixed(2)}`,
     item.capacity,
     item.specs.readSpeed,
     item.specs.writeSpeed,
@@ -1226,7 +1359,7 @@ function renderCheckoutSummary() {
                 <a href="shop.html" class="btn btn-red">Continue Shopping</a>
             </div>
         `;
-    checkoutTotal.textContent = "Rs. 0.00";
+    checkoutTotal.textContent = "0.00";
     return;
   }
 
@@ -1235,13 +1368,13 @@ function renderCheckoutSummary() {
       (item) => `
         <div class="order-item" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
             <span class="order-item-name" style="color: var(--text-white);">${item.name} x${item.quantity}</span>
-            <span class="order-item-price" style="color: var(--text-white);">Rs. ${(item.price * item.quantity).toFixed(2)}</span>
+            <span class="order-item-price" style="color: var(--text-white);">$${(item.price * item.quantity).toFixed(2)}</span>
         </div>
     `,
     )
     .join("");
 
-  checkoutTotal.textContent = `Rs. ${cartState.total.toFixed(2)}`;
+  checkoutTotal.textContent = cartState.total.toFixed(2);
 }
 
 function attachCheckoutFormListener() {
@@ -1470,7 +1603,7 @@ function clearSuggestions(panel) {
 }
 
 function goToShopWithQuery(q) {
-  // Keep UX simple � programmatic redirect
+  // Keep UX simple — programmatic redirect
   const target = "shop.html?q=" + encodeURIComponent(q);
   window.location.href = target;
 }
@@ -1485,7 +1618,7 @@ function injectTechWidget() {
   w.className = "tech-widget";
   w.innerHTML = '<div class="core">OG</div>'; // OG = OceanGate small badge
   w.addEventListener("click", () => {
-    showNotification("Tech core � quick demo widget");
+    showNotification("Tech core — quick demo Ai is coming soon");
   });
   document.body.appendChild(w);
 }
