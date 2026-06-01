@@ -1,5 +1,137 @@
 ﻿/* ================= SHOP PAGE STYLES ================= */
 
+.shop-promo-carousel-section {
+    padding: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 50px;
+    z-index: 10;
+    background-color: #050508;
+}
+
+/* Base structural setups */
+.carousel-img-wrapper {
+    width: 100%;
+    height: 340px; /* Locked desktop height taake content jump na kare */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Slide 1 background matches image theme color so it doesn't stretch or distort */
+.first-slide-bg {
+    background: linear-gradient(90deg, #120303 0%, #1a0404 35%, #921313 100%);
+}
+
+.text-slide-bg {
+    background-color: #000000;
+}
+
+/* ⚡ BANNER RESIZER - Phatne se rokne ki setting */
+.promo-banner-asset {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* First slide specific centered image rendering to keep it smooth and crisp */
+.central-banner {
+    width: auto !important; /* Image wide stretch hokar fategi nahi */
+    max-width: 100%;
+    object-fit: contain !important;
+    /* Clean linear anti-aliasing filtering */
+    image-rendering: auto !important; 
+}
+
+/* ⚡ VISIBLE TEXT OVERLAY SYSTEM (h1 and p controllers) */
+.carousel-item {
+    position: relative;
+}
+
+.custom-slider-caption {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 30; /* Text layer standard priority rules */
+    max-width: 600px;
+    padding: 25px;
+    background: rgba(4, 4, 7, 0.85);
+    backdrop-filter: blur(8px);
+    border-left: 4px solid #ff4d4d;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Heading Styling */
+.slider-h1 {
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px !important;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Paragraph Text Styling */
+.slider-p {
+    font-size: 1.05rem !important;
+    color: #cccccc !important;
+    margin: 0 !important;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Bootstrap Indicator Dots */
+.shop-promo-carousel-section .carousel-indicators {
+    z-index: 35 !important;
+}
+
+.shop-promo-carousel-section .carousel-indicators [data-bs-target] {
+    background-color: #ff4d4d !important;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.shop-promo-carousel-section .carousel-indicators .active {
+    width: 25px;
+    border-radius: 5px;
+}
+
+/* 📱 MOBILE RESPONSIVE TUNING */
+@media (max-width: 768px) {
+    .carousel-img-wrapper {
+        height: 180px; /* Responsive mobile scaling */
+    }
+    
+    .central-banner {
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    .custom-slider-caption {
+        left: 5%;
+        right: 5%;
+        padding: 10px;
+        max-width: 90%;
+    }
+    
+    .slider-h1 {
+        font-size: 1.2rem !important;
+        margin-bottom: 4px !important;
+    }
+    
+    .slider-p {
+        font-size: 0.8rem !important;
+    }
+}
 .filters-container {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(92, 92, 92, 0.35);

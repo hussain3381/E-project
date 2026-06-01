@@ -209,7 +209,7 @@ function showNotification(message, type = "info") {
     top: 20px;
     right: 20px;
     padding: 16px 24px;
-    background: ${type === "success" ? "rgba(76, 175, 80, 0.9)" : type === "error" ? "rgba(244, 67, 54, 0.9)" : "rgba(33, 150, 243, 0.9)"};
+    background: ${type === "success" ? "rgba(76, 175, 80, 0.9)" : type === "error" ? "rgba(244, 67, 54, 0.9)" : "green"};
     color: white;
     border-radius: 6px;
     font-weight: 600;

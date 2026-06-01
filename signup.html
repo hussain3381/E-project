@@ -16,6 +16,16 @@
 
 <body>
     <!-- Header navigation -->
+          <!-- Preloader -->
+    <div id="og-preloader-shuttle">
+      <div class="og-loader-wrapper">
+        <h1 class="og-loader-logo logo"><img src="./src/img/logo/logo-black-theme1.png" alt=""></h1>
+        <div class="og-progress-frame">
+            <div class="og-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Header navigation and mobile menu -->
     <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
             <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
@@ -56,8 +66,6 @@
                 </div>
             </nav>
             <div class="header-actions d-flex align-items-center">
-                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
-                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
                 <div class="search-wrapper me-3">
                     <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
                     <div class="search-expand" aria-hidden="true">
@@ -65,6 +73,8 @@
                         <div id="searchSuggestions" class="suggestions-panel" aria-hidden="true"></div>
                     </div>
                 </div>
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
                 <button class="menu-btn d-lg-none" id="menuBtn"><span></span><span></span><span></span></button>
             </div>
         </div>
@@ -79,6 +89,7 @@
             </nav>
         </div>
     </header>
+
     <!-- Authentication form section -->
     <main class="auth-page">
         <div class="auth-container" data-aos="fade-up">
@@ -99,24 +110,14 @@
                         <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
                     </div>
 
-                    <div class="form-group password-field">
+                    <div class="form-group">
                         <label for="password">Password</label>
-                        <div class="password-input-wrap">
-                            <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
-                            <button type="button" class="password-toggle" aria-label="Toggle password visibility">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
                     </div>
 
-                    <div class="form-group password-field">
+                    <div class="form-group">
                         <label for="confirmPassword">Confirm Password</label>
-                        <div class="password-input-wrap">
-                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="••••••••" required>
-                            <button type="button" class="password-toggle" aria-label="Toggle password visibility">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="••••••••" required>
                     </div>
 
                     <div class="form-options">
@@ -157,7 +158,7 @@
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a href="index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
+                    <a href="index.html" class="footer-logo"><img src="./src/img/logo/logo-black-theme1.png"
                             alt="OceanGate Logo"></a>
                     <p style="color: var(--text-gray); font-size: 0.9rem;">Premium storage solutions for all your data needs.</p>
                 </div>

@@ -9,11 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./styleSheets/style.css">
-    <link rel="stylesheet" href="./styleSheets/shop.css">
+        <link rel="stylesheet" href="./styleSheets/shop.css">
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo/favicon.png">
 </head>
 
 <body>
     <!-- Header navigation -->
+          <!-- Preloader -->
+    <div id="og-preloader-shuttle">
+      <div class="og-loader-wrapper">
+        <h1 class="og-loader-logo logo"><img src="./src/img/logo/logo-black-theme1.png" alt=""></h1>
+        <div class="og-progress-frame">
+            <div class="og-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Header navigation and mobile menu -->
     <header class="header">
         <div class="container d-flex align-items-center justify-content-between">
             <a href="./index.html" class="logo"><img src="./src/img/logo/logo-black-theme1.png"
@@ -54,7 +65,7 @@
                 </div>
             </nav>
             <div class="header-actions d-flex align-items-center">
-                <a href="./login.html" class="me-3 user-icon"><i class="far fa-user"></i></a>
+                <a href="#" class="me-3 user-icon"><i class="far fa-user"></i></a>
                 <div class="cart-icon"><a href="#" onclick="toggleCart(); return false;"><i class="fas fa-shopping-cart"></i></a><span class="cart-badge" id="cartCount">0</span></div>
                 <div class="search-wrapper me-3">
                     <button class="search-trigger" aria-label="Open search"><i class="fas fa-search"></i></button>
@@ -79,8 +90,71 @@
         </div>
     </header>
 
+    
+    <section class="shop-promo-carousel-section">
+    <div id="oceanGateShopCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+        
+        <!-- Bottom Dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#oceanGateShopCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#oceanGateShopCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#oceanGateShopCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- Slides Wrapper -->
+        <div class="carousel-inner">
+            
+            <!-- Slide 1: Special Offer Banner (No Blur Dynamic Grid) -->
+            <div class="carousel-item active">
+                <div class="carousel-img-wrapper first-slide-bg">
+                    <img src="./src/img/banners/banner-offer.jpg" class="d-block promo-banner-asset central-banner" alt="Special 75 Percent Discount Sale">
+                </div>
+            </div>
+
+            <!-- Slide 2: Next Gen Hardware + Visible H1 & P -->
+            <div class="carousel-item">
+                <div class="carousel-img-wrapper text-slide-bg ">
+                    <img src="./src/img/banners/bg2.jpg" class="d-block w-100 promo-banner-asset" alt="Premium Hardware Tier Spotlight">
+                    <div class="custom-slider-caption">
+                        <h1 class="slider-h1">NEW ARRIVALS</h1>
+                        <p class="slider-p">Next-Gen NVMe Protocols Now In Stock.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Secure Storage Vault + Visible H1 & P -->
+            <div class="carousel-item">
+                <div class="carousel-img-wrapper text-slide-bg">
+                    <img src="./src/img/banners/bg1.jpg" class="d-block w-100 promo-banner-asset" alt="Cyber Grid Line Vault Tech">
+                    <div class="custom-slider-caption">
+                        <h1 class="slider-h1">SECURE MATRIX VAULT</h1>
+                        <p class="slider-p">Military-Grade Hardware Encryption Storage Asset.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controllers -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#oceanGateShopCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#oceanGateShopCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+
+    </div>
+</section>
+
+<section class="shop-page-header section-panel" style=" padding: 80px 0; border-bottom: 1px solid rgba(255, 77, 77, 0.15);">
+    <div class="container text-center">
+            <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--text-white); margin-bottom: 12px;">Browse Storage Solutions</h1>
+            <p style="color: var(--text-gray); font-size: 1rem; margin: 0;">Discover premium optical media and high-speed SSDs in a curated marketplace experience.</p>
+        </div>
+    </section>
+
     <!-- Promotion showcase rows (placeholders) -->
-    <section class="shop-promotions" style="padding: 30px 0 0;">
+    <section class="shop-promotions" style="padding: 30px 0;">
         <div class="container">
             <div class="row g-3">
                 <div class="col-md-6">
@@ -112,14 +186,6 @@
             </div>
         </div>
     </section>
-
-    <section class="shop-page-header" style="background: var(--bg-black); padding: 60px 0; border-bottom: 1px solid rgba(255, 77, 77, 0.15);">
-        <div class="container text-center">
-            <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--text-white); margin-bottom: 12px;">Browse Storage Solutions</h1>
-            <p style="color: var(--text-gray); font-size: 1rem; margin: 0;">Discover premium optical media and high-speed SSDs in a curated marketplace experience.</p>
-        </div>
-    </section>
-
     <section id="shopPage" style="background: var(--bg-dark); padding: 60px 0;">
         <div class="container-fluid">
             <div class="row g-4">
@@ -133,43 +199,41 @@
                         <details class="filter-panel" open>
                             <summary>Brand</summary>
                             <div class="filter-options">
-                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="Sony">Sony</label>
-                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="Samsung">Samsung</label>
-                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="Kingston">Kingston</label>
-                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="Verbatim">Verbatim</label>
-                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="SanDisk">SanDisk</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="sony">Sony</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="samsung">Samsung</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="kingston">Kingston</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="verbatim">Verbatim</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="seagate">Seagate</label>
                             </div>
                         </details>
 
                         <details class="filter-panel" open>
                             <summary>Category</summary>
                             <div class="filter-options">
-                                <label class="filter-option"><input type="checkbox" class="category-filter" value="CD">CD</label>
-                                <label class="filter-option"><input type="checkbox" class="category-filter" value="DVD">DVD</label>
-                                <label class="filter-option"><input type="checkbox" class="category-filter" value="Blu-ray">Blu-ray</label>
-                                <label class="filter-option"><input type="checkbox" class="category-filter" value="SSD">SSD</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="cd-r">CD-R</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="dvd-rw">DVD-RW</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="blu-ray">Blu-ray</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="ssd">SSD</label>
                             </div>
                         </details>
 
                         <details class="filter-panel" open>
                             <summary>Speed</summary>
                             <div class="filter-options">
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="10X">10X</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="16X">16X</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="24X">24X</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="52X">52X</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="500MB/s">500MB/s</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="520MB/s">520MB/s</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="560MB/s">560MB/s</label>
-                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="7000MB/s">7000MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="10">10X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="16">16X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="52">52X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="150">150 MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="550">550 MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="570">570 MB/s</label>
                             </div>
                         </details>
 
                         <details class="filter-panel" open>
                             <summary>Price Range</summary>
                             <div class="filter-options">
-                                <span class="filter-range-label">Max Price: Rs. <span id="priceValue">25000</span></span>
-                                <input type="range" class="form-range price-filter" id="priceRange" min="0" max="25000" value="25000" onchange="filterProducts()">
+                                <span class="filter-range-label">Max Price: $<span id="priceValue">200</span></span>
+                                <input type="range" class="form-range price-filter" id="priceRange" min="0" max="200" value="200" onchange="filterProducts()">
                             </div>
                         </details>
                     </div>
@@ -239,7 +303,7 @@
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a href="index.html" class="footer-logo">OCEANGATE</a>
+                    <a href="index.html" class="footer-logo"><img src="./src/img/logo/logo-black-theme1.png" alt=""></a>
                     <p class="pe-lg-5" style="color: var(--text-gray); font-size: 0.9rem;">Premium storage devices for all your data needs.</p>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2">
@@ -285,9 +349,9 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
-    <script src="./js/auth.js"></script>
 </body>
 
 </html>

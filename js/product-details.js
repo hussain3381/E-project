@@ -48,7 +48,7 @@ function renderProductDetails(product) {
   // Update product icon
   const iconElem = document.getElementById("productDetailIcon");
   if (iconElem) {
-    iconElem.innerHTML = `<img src="${product.image}" alt="${product.name}" style="max-width: 100%; max-height: 100%;">`;
+    iconElem.innerHTML = `<img src="${product.image}" alt="${product.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
   }
 
   // Update product warranty
@@ -155,7 +155,8 @@ function renderRelatedProducts(currentProduct) {
           <a href="./product-details.html?id=${product.id}" style="text-decoration: none;">
             <div class="related-product-card">
               <div class="related-product-image">
-                ${product.image}
+
+              <img src="${product.image}" alt="${product.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
               </div>
               <div class="related-product-body">
                 <h4 class="related-product-title">${product.name}</h4>
