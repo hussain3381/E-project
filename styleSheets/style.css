@@ -904,7 +904,7 @@ textarea:focus,
 
 .footer {
     background-color: var(--pure-black);
-     background-image:linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('../src/img/banners/bg6.jpg');
+     background-image:linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('../src/img/banners/bg1.jpg');
     background-size: cover; 
     background-position: center; 
     border-radius: 8px; 
