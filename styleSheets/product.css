@@ -93,6 +93,7 @@
     overflow: hidden;
     transition: all 0.3s ease;
     cursor: pointer;
+    min-height: 350px;
 }
 
 .related-product-card:hover {

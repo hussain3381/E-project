@@ -1,5 +1,16 @@
 /* ================= BLOG PAGE STYLES ================= */
 
+.blog-header{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image:url('../src/img/banners/banner-blog.png');
+    border: 1px solid rgba(255, 77, 77, 0.15);
+    padding: 80px 30px;
+    margin-bottom: 40px;
+}
+
+
 /* Blog Card Styling */
 
 .blog-card {
