@@ -34,6 +34,10 @@ body {
 img {
     display: block;
     max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    image-rendering: crisp-edges;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -611,6 +615,9 @@ textarea {
     padding: 12px 14px;
     transition: all 0.25s ease;
 }
+.form-select option{
+    color: black!important;
+}
 
 .input-pill:focus,
 .form-control:focus,
@@ -1000,14 +1007,13 @@ textarea:focus,
 
 .section-panel {
     position: relative;
-    /* `images (6).jpg` aapke saare chote sections par background text ko kharab kiye bagair bohot premium lagti hai */
     background-image: linear-gradient(135deg, rgba(4, 4, 7, 0.88), rgba(20, 5, 5, 0.94)), 
                       url('../src/img/banners/images (7).jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
-    /* Box structure aur modern spacing */
+    background-attachment: fixed;
+    /* Box structure & modern spacing */
     padding: 50px 40px;
     border-radius: 8px;
     overflow: hidden;

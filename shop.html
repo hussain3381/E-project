@@ -204,6 +204,10 @@
                                 <label class="filter-option"><input type="checkbox" class="brand-filter" value="kingston">Kingston</label>
                                 <label class="filter-option"><input type="checkbox" class="brand-filter" value="verbatim">Verbatim</label>
                                 <label class="filter-option"><input type="checkbox" class="brand-filter" value="seagate">Seagate</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="sandisk">SanDisk</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="crucial">Crucial</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="intel">Intel</label>
+                                <label class="filter-option"><input type="checkbox" class="brand-filter" value="wd">Western Digital</label>
                             </div>
                         </details>
 
@@ -211,9 +215,12 @@
                             <summary>Category</summary>
                             <div class="filter-options">
                                 <label class="filter-option"><input type="checkbox" class="category-filter" value="cd-r">CD-R</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="cd-rw">CD-RW</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="dvd-r">DVD-R</label>
                                 <label class="filter-option"><input type="checkbox" class="category-filter" value="dvd-rw">DVD-RW</label>
                                 <label class="filter-option"><input type="checkbox" class="category-filter" value="blu-ray">Blu-ray</label>
                                 <label class="filter-option"><input type="checkbox" class="category-filter" value="ssd">SSD</label>
+                                <label class="filter-option"><input type="checkbox" class="category-filter" value="hdd">HDD</label>
                             </div>
                         </details>
 
@@ -222,18 +229,24 @@
                             <div class="filter-options">
                                 <label class="filter-option"><input type="checkbox" class="speed-filter" value="10">10X</label>
                                 <label class="filter-option"><input type="checkbox" class="speed-filter" value="16">16X</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="24">24X</label>
                                 <label class="filter-option"><input type="checkbox" class="speed-filter" value="52">52X</label>
                                 <label class="filter-option"><input type="checkbox" class="speed-filter" value="150">150 MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="530">530 MB/s</label>
                                 <label class="filter-option"><input type="checkbox" class="speed-filter" value="550">550 MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="560">560 MB/s</label>
                                 <label class="filter-option"><input type="checkbox" class="speed-filter" value="570">570 MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="1800">1800 MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="2100">2100 MB/s</label>
+                                <label class="filter-option"><input type="checkbox" class="speed-filter" value="3500">3500 MB/s</label>
                             </div>
                         </details>
 
                         <details class="filter-panel" open>
                             <summary>Price Range</summary>
                             <div class="filter-options">
-                                <span class="filter-range-label">Max Price: $<span id="priceValue">200</span></span>
-                                <input type="range" class="form-range price-filter" id="priceRange" min="0" max="200" value="200" onchange="filterProducts()">
+                                <span class="filter-range-label">Max Price: $<span id="priceValue">20000</span></span>
+                                <input type="range" class="form-range price-filter" id="priceRange" min="0" max="20000" value="20000" onchange="filterProducts()">
                             </div>
                         </details>
                     </div>
@@ -352,6 +365,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/product-details.js"></script>
+    <script src="./js/auth.js"></script>
+
 </body>
 
 </html>

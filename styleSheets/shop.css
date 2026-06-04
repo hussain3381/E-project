@@ -283,10 +283,22 @@
 .product-card-image {
     background: linear-gradient(135deg, #0f1114, #0b0b0e);
     height: 190px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid rgba(92, 92, 92, 0.35);
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    image-rendering: crisp-edges;
 }
 
 .product-card-image i {

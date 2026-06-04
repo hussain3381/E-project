@@ -523,7 +523,7 @@ const productsDatabase = [
     price: 16500,
     speed: "2100",
     capacity: "1TB",
-    image: 'https://picsum.photos/600/400?tech=23',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZtd9P2pxTeW8NpOr9vnZPu1wM9v8IPpBow&s',
     specs: {
       readSpeed: "2100MB/s",
       writeSpeed: "1700MB/s",
@@ -540,7 +540,7 @@ const productsDatabase = [
     price: 11500,
     speed: "3500",
     capacity: "500GB",
-    image: 'https://picsum.photos/600/400?tech=24',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2JzEDgOYBwNKKVYhwVUJDJxX5SdF6aSRQ-Q&s',
     specs: {
       readSpeed: "3500MB/s",
       writeSpeed: "2500MB/s",
@@ -557,7 +557,7 @@ const productsDatabase = [
     price: 19500,
     speed: "3500",
     capacity: "1TB",
-    image: 'https://picsum.photos/600/400?tech=25',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQDoIyLJaUO2h-tE8ZUGT_V_lS-wr0mJyXTw&s',
     specs: {
       readSpeed: "3500MB/s",
       writeSpeed: "2500MB/s",
@@ -574,7 +574,7 @@ const productsDatabase = [
     price: 8800,
     speed: "560",
     capacity: "500GB",
-    image: 'https://picsum.photos/600/400?tech=26',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlkEKjkwkz-4x8uFugDSFHEX5kyTU3r_LuHA&s',
     specs: {
       readSpeed: "560MB/s",
       writeSpeed: "530MB/s",
@@ -591,7 +591,7 @@ const productsDatabase = [
     price: 8900,
     speed: "560",
     capacity: "500GB",
-    image: 'https://picsum.photos/600/400?tech=27',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhghDAxfd8k0A9fhkqAT4NEwd_Zok6VM7vtw&s',
     specs: {
       readSpeed: "560MB/s",
       writeSpeed: "510MB/s",
@@ -608,7 +608,7 @@ const productsDatabase = [
     price: 9500,
     speed: "1800",
     capacity: "512GB",
-    image: 'https://picsum.photos/600/400?tech=28',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFdnpJVDPbhJqukeN4IE32PpqmH7crEF3ulg&s',
     specs: {
       readSpeed: "1800MB/s",
       writeSpeed: "1200MB/s",
@@ -627,7 +627,7 @@ const productsDatabase = [
     price: 5500,
     speed: "150",
     capacity: "1TB",
-    image: 'https://picsum.photos/600/400?tech=29',
+    image: 'https://www.pakdukaan.pk/cdn/shop/files/Seagate-BarraCuda-1TB-2.5-SATA-6Gbs-Internal-Hard-Drive-HDD-for-Laptop-Price-in-Pakistan.jpg?v=1739780577',
     specs: {
       readSpeed: "150MB/s",
       writeSpeed: "150MB/s",
@@ -644,7 +644,7 @@ const productsDatabase = [
     price: 8500,
     speed: "150",
     capacity: "2TB",
-    image: 'https://picsum.photos/600/400?tech=30',
+    image: 'https://m.media-amazon.com/images/I/71V1jd3s9dL._AC_UF894,1000_QL80_.jpg',
     specs: {
       readSpeed: "150MB/s",
       writeSpeed: "150MB/s",
@@ -661,7 +661,7 @@ const productsDatabase = [
     price: 14500,
     speed: "150",
     capacity: "4TB",
-    image: 'https://picsum.photos/600/400?tech=31',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs3cjOxBdXHUcFupUEyXGFdl5pOEkbVzXVdw&s',
     specs: {
       readSpeed: "150MB/s",
       writeSpeed: "150MB/s",
@@ -678,7 +678,7 @@ const productsDatabase = [
     price: 8800,
     speed: "150",
     capacity: "2TB",
-    image: 'https://picsum.photos/600/400?tech=32',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfklJvhnqK1qLR1e8qm-t3tyeBNQwuazkpgA&s',
     specs: {
       readSpeed: "150MB/s",
       writeSpeed: "150MB/s",
@@ -695,7 +695,7 @@ const productsDatabase = [
     price: 15000,
     speed: "150",
     capacity: "4TB",
-    image: 'https://picsum.photos/600/400?tech=34',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSerTe2-EHkvCHRSwoSqSfjHi3WH0ljhvUPHg&s' ,
     specs: {
       readSpeed: "150MB/s",
       writeSpeed: "150MB/s",
@@ -732,6 +732,10 @@ function initPage() {
 
   cartState.load();
   comparisonState.load();
+  if (typeof authState !== "undefined") {
+    authState.load();
+  }
+  refreshCartDrawer();
   updateCartBadge();
 
   if (document.getElementById("productGrid")) {
@@ -822,8 +826,6 @@ function initializeShopPage() {
   const params = new URLSearchParams(window.location.search);
   const q = params.get("q");
 
-  attachFilterListeners();
-
   if (q && q.trim().length) {
     const query = q.trim().toLowerCase();
     const matched = productsDatabase.filter((p) =>
@@ -836,6 +838,11 @@ function initializeShopPage() {
   } else {
     renderProducts(productsDatabase);
   }
+
+  // Attach filter listeners AFTER rendering products
+  setTimeout(() => {
+    attachFilterListeners();
+  }, 100);
 
   const sortBy = document.getElementById("sortBy");
   if (sortBy) {
@@ -863,8 +870,7 @@ function renderProducts(products) {
                 <a href="./product-details.html?id=${product.id}" style="text-decoration: none;">
                   <article class="product-card">
                     <div class="product-card-image">
-
-                    <img src="${product.image}" alt="${product.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                      <img src="${product.image}" alt="${product.name}" class="product-image" />
                     </div>
                     <div class="product-card-body">
                         <h5>${product.name}</h5>
@@ -874,8 +880,8 @@ function renderProducts(products) {
                         </div>
                         <div class="product-price">$${product.price.toFixed(2)}</div>
                         <div class="product-actions">
-                            <label class="compare-switch" onclick="event.preventDefault(); event.stopPropagation();">
-                                <input type="checkbox" data-product-id="${product.id}" onchange="toggleComparison(${product.id}, this.checked)" ${isCompared ? "checked" : ""} />
+                            <label class="compare-switch">
+                                <input type="checkbox" data-product-id="${product.id}" class="product-checkbox" onchange="toggleComparison(${product.id}, this.checked)" ${isCompared ? "checked" : ""} />
                                 Compare
                             </label>
                             <button class="add-to-cart-btn" data-product-id="${product.id}" onclick="event.preventDefault(); event.stopPropagation();">Add to Cart</button>
@@ -889,6 +895,7 @@ function renderProducts(products) {
     .join("");
 
   attachAddToCartListeners();
+  attachFilterListeners();
 }
 
 /* ===========================
@@ -1088,17 +1095,23 @@ function showWidgetInfo() {
 
 /* Shop page filter controls */
 function attachFilterListeners() {
+  // Remove existing listeners by cloning nodes
   document
-    .querySelectorAll(".brand-filter, .category-filter, .speed-filter")
+    .querySelectorAll("#shopPage .brand-filter, #shopPage .category-filter, #shopPage .speed-filter")
     .forEach((input) => {
-      input.addEventListener("change", filterProducts);
+      const newInput = input.cloneNode(true);
+      input.parentNode.replaceChild(newInput, input);
+      newInput.addEventListener("change", filterProducts);
     });
 
   const priceRange = document.getElementById("priceRange");
   const priceValue = document.getElementById("priceValue");
   if (priceRange && priceValue) {
-    priceRange.addEventListener("input", () => {
-      priceValue.textContent = priceRange.value;
+    // Remove old listener by cloning
+    const newRange = priceRange.cloneNode(true);
+    priceRange.parentNode.replaceChild(newRange, priceRange);
+    newRange.addEventListener("input", () => {
+      priceValue.textContent = newRange.value;
       filterProducts();
     });
   }
@@ -1136,21 +1149,45 @@ function toggleComparison(productId, isChecked) {
   } else {
     comparisonState.removeItem(productId);
   }
+  
+  // Re-render the product grid to update all checkboxes
+  const brands = Array.from(
+    document.querySelectorAll("#shopPage .brand-filter:checked"),
+  ).map((el) => el.value);
+  const categories = Array.from(
+    document.querySelectorAll("#shopPage .category-filter:checked"),
+  ).map((el) => el.value);
+  const speeds = Array.from(
+    document.querySelectorAll("#shopPage .speed-filter:checked"),
+  ).map((el) => el.value);
+  const maxPrice =
+    parseFloat(document.getElementById("priceRange")?.value) || 200000;
+
+  const filtered = productsDatabase.filter((product) => {
+    const brandMatch = brands.length === 0 || brands.includes(product.brand);
+    const categoryMatch =
+      categories.length === 0 || categories.includes(product.category);
+    const speedMatch = speeds.length === 0 || speeds.includes(product.speed);
+    const priceMatch = product.price <= maxPrice;
+    return brandMatch && categoryMatch && speedMatch && priceMatch;
+  });
+
+  renderProducts(filtered);
   renderComparisonPage();
 }
 
 function filterProducts() {
   const brands = Array.from(
-    document.querySelectorAll(".brand-filter:checked"),
+    document.querySelectorAll("#shopPage .brand-filter:checked"),
   ).map((el) => el.value);
   const categories = Array.from(
-    document.querySelectorAll(".category-filter:checked"),
+    document.querySelectorAll("#shopPage .category-filter:checked"),
   ).map((el) => el.value);
   const speeds = Array.from(
-    document.querySelectorAll(".speed-filter:checked"),
+    document.querySelectorAll("#shopPage .speed-filter:checked"),
   ).map((el) => el.value);
   const maxPrice =
-    parseFloat(document.getElementById("priceRange")?.value) || 200;
+    parseFloat(document.getElementById("priceRange")?.value) || 200000;
 
   const filtered = productsDatabase.filter((product) => {
     const brandMatch = brands.length === 0 || brands.includes(product.brand);
@@ -1166,13 +1203,13 @@ function filterProducts() {
 
 function resetFilters() {
   document
-    .querySelectorAll('#shopPage input[type="checkbox"]')
+    .querySelectorAll('#shopPage input[type="checkbox"].brand-filter, #shopPage input[type="checkbox"].category-filter, #shopPage input[type="checkbox"].speed-filter')
     .forEach((input) => (input.checked = false));
   const priceRange = document.getElementById("priceRange");
   const priceValue = document.getElementById("priceValue");
   if (priceRange && priceValue) {
-    priceRange.value = 200;
-    priceValue.textContent = 200;
+    priceRange.value = 20000;
+    priceValue.textContent = "20000";
   }
   filterProducts();
 }
@@ -1405,6 +1442,28 @@ function validateCheckoutForm() {
   if (!emailRegex.test(email)) {
     showNotification("Please enter a valid email address");
     return false;
+  }
+
+  // Validate credit card if card payment selected
+  if (payment === "card") {
+    const cardNumber = document.getElementById("cardNumber")?.value.replace(/\s/g, "");
+    const cardExpiry = document.getElementById("cardExpiry")?.value;
+    const cardCVV = document.getElementById("cardCVV")?.value;
+    
+    if (!cardNumber || cardNumber.length !== 16 || !/^\d+$/.test(cardNumber)) {
+      showNotification("Please enter a valid 16-digit card number");
+      return false;
+    }
+    
+    if (!cardExpiry || !/^\d{2}\/\d{2}$/.test(cardExpiry)) {
+      showNotification("Please enter expiry in MM/YY format");
+      return false;
+    }
+    
+    if (!cardCVV || cardCVV.length !== 3 || !/^\d+$/.test(cardCVV)) {
+      showNotification("Please enter a valid 3-digit CVV");
+      return false;
+    }
   }
 
   return true;
