@@ -285,7 +285,7 @@ function getRedirectTarget() {
 
 function isPublicPage() {
   const path = window.location.pathname.toLowerCase();
-  return path.endsWith("/login.html") || path.endsWith("/signup.html") || path.endsWith("/forgot.html");
+  return  path.endsWith("/signup.html") || path.endsWith("/login.html") || path.endsWith("/forgot.html");
 }
 
 function requireAuth() {
@@ -298,8 +298,8 @@ function requireAuth() {
   }
 
   const destination = window.location.pathname + window.location.search;
-  const loginUrl = `login.html?redirect=${encodeURIComponent(destination)}`;
-  window.location.replace(loginUrl);
+  const signupUrl = `signup.html?redirect=${encodeURIComponent(destination)}`;
+  window.location.replace(signupUrl);
 }
 
 /* ===== Page Initialization ===== */
